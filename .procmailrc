@@ -1,0 +1,9 @@
+VERBOSE=off
+DEFAULT=/var/spool/mail/
+MAILDIR=/var/spool/mail/
+LOGFILE=$HOME/procmail.log
+LOGABSTRACT=no
+
+:0
+* .*
+flowam

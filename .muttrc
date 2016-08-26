@@ -1,0 +1,88 @@
+# A basic .muttrc for use with Gmail
+
+# Change the following six lines to match your Gmail account details
+#need to modify
+set from = "tangjilong@flowam.com"
+set realname = "tangjilong"
+
+#Stop asking if I want to move read messages to mbox
+set move=no
+
+# COMPOSING
+#set status_on_top
+set fast_reply
+set edit_headers
+set askcc
+set reverse_name
+set reverse_alias
+set hostname=flowam.com
+set editor="vim"
+set markers=no
+set askbcc
+
+# Basic config, you can leave this as is
+set folder=/var/spool/mail/
+set record=/var/spool/mail/sent
+set postponed=/var/spool/mail/draft
+mailboxes = flowam
+mailboxes = sent
+
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set mailcap_path = ~/.mutt/mailcap
+set move = no
+set delete = yes
+set beep_new
+set include = yes
+set auto_tag = yes
+set signature= "~/.mutt/signature"
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+alternative_order text/plain text/html *
+auto_view text/html
+bind editor <Tab> complete-query
+bind editor ^T complete
+bind editor <space> noop
+
+# APPEARANCE
+set date_format = "%a %d %b" # formats as strftime
+set index_format="[%Z] %-20.20F (%M) %s %* %D" # %* justifies right w priority
+# COLORSCHEME
+source $HOME/.mutt/mutt-colors-solarized-dark-16.muttrc
+
+# INDEX KEY BINDINGS
+bind index gg first-entry
+bind index G  last-entry
+bind index R group-reply
+
+# PAGER
+bind pager k previous-line
+bind pager j next-line
+bind pager gg top
+bind pager G bottom
+bind pager R group-reply
+
+# attachment viewing
+bind attach <return> view-mailcap
+
+# THREADING
+set sort=threads
+set sort_browser=date
+set sort_aux=reverse-last-date-received
+set uncollapse_jump
+unset collapse_unread
+# auto collapse threads
+folder-hook . "exec collapse-all"
+
+# Gmail-style keyboard shortcuts
+macro index F "!fetchmail\r"
+macro pager F "!fetchmail\r"
+macro pager lb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
+#Headers on mail that I send.
+my_hdr From: "Tim.Tang" <tangjilong@flowam.com>
+my_hdr Reply-To: tangjilong@flowam.com
+my_hdr From: "Tim.Tang" <tangjilong@flowam.com>

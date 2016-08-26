@@ -315,17 +315,20 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
---myStartupHook = do
---  spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
+--myStartupHook = return ()
+myStartupHook = do
+  spawn "xset r rate 250 60"
+  spawn "xsetroot -cursor_name left_ptr" 
+  spawn "feh --bg-fill /home/flowam/Pictures/wl3.png &"
+  spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
+  spawn "ibus-daemon -rdx"
+  setWMName "LG3D"
 
 
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.
 --
 main = do
-  xmproc <- spawnPipe "feh --bg-fill /home/flowam/Pictures/wl3.png &"
-  xmproc <- spawnPipe "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
@@ -335,7 +338,7 @@ main = do
           , ppSep = "   "
       }
       , manageHook = manageDocks <+> myManageHook
-      , startupHook = setWMName "LG3D"
+      --, startupHook = setWMName "LG3D"
   }
 
 

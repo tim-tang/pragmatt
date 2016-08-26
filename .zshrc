@@ -56,13 +56,10 @@ plugins=(git)
 # User configuration #
 ######################
 
-sudo xset r rate 250 60
-xsetroot -cursor_name left_ptr
 # export MANPATH="/usr/local/man:$MANPATH"
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
-ibus-daemon -rdx
 
 export PATH="/home/flowam/.xmonad/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 

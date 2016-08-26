@@ -317,7 +317,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- By default, do nothing.
 myStartupHook = return ()
 --myStartupHook = do
---  spawn "feh --bg-fill /home/flowam/Pictures/wl3.png"
+--  spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
 
 
 ------------------------------------------------------------------------
@@ -325,6 +325,7 @@ myStartupHook = return ()
 --
 main = do
   xmproc <- spawnPipe "feh --bg-fill /home/flowam/Pictures/wl3.png &"
+  xmproc <- spawnPipe "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {

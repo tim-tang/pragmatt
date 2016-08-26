@@ -58,7 +58,6 @@ plugins=(git)
 
 sudo xset r rate 250 60
 xsetroot -cursor_name left_ptr
-#xcompmgr -n &
 # export MANPATH="/usr/local/man:$MANPATH"
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

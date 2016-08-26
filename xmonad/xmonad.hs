@@ -315,16 +315,16 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
--- myStartupHook = return ()
-myStartupHook = do
-  --spawn "feh --bg-scale /home/flowam/Pictures/wl3.png"
-  spawn "feh --bg-scale /usr/share/backgrounds/gnome/adwaita-night.jpg"
+myStartupHook = return ()
+--myStartupHook = do
+--  spawn "feh --bg-fill /home/flowam/Pictures/wl3.png"
 
 
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.
 --
 main = do
+  xmproc <- spawnPipe "feh --bg-fill /home/flowam/Pictures/wl3.png &"
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {

@@ -58,7 +58,6 @@ plugins=(git)
 
 sudo xset r rate 250 60
 xsetroot -cursor_name left_ptr
-feh --bg-scale /home/flowam/Pictures/wl3.png
 #xcompmgr -n &
 # export MANPATH="/usr/local/man:$MANPATH"
 export QT_IM_MODULE=ibus
@@ -67,7 +66,6 @@ export GTK_IM_MODULE=ibus
 ibus-daemon -rdx
 
 export PATH="/home/flowam/.xmonad/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-
 
 
 source $ZSH/oh-my-zsh.sh

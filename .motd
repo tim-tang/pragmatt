@@ -9,6 +9,8 @@
 #      # session optional pam_motd.so
 #
 
+GREEN='\033[1;32m'
+BROWN='\033[0;33m'
 USER=`whoami`
 HOSTNAME=`uname -n`
 ROOT=`df -Ph | grep fedora-root | awk '{print $4}' | tr -d '\n'`
@@ -41,7 +43,7 @@ LOAD1=`cat /proc/loadavg | awk {'print $1'}`
 LOAD5=`cat /proc/loadavg | awk {'print $2'}`
 LOAD15=`cat /proc/loadavg | awk {'print $3'}`
 
-echo "
+echo -e "${GREEN}
  ______  ____   __ __       _____    __  ____    ___  ____      __    ___ 
 |      ||    \ |  |  |     / ___/   /  ]|    |  /  _]|    \    /  ]  /  _]
 |      ||  D  )|  |  |    (   \_   /  /  |  |  /  [_ |  _  |  /  /  /  [_ 
@@ -49,9 +51,8 @@ echo "
   |  |  |    \ |___, |     /  \ |/   \_  |  | |   [_ |  |  |/   \_ |   [_ 
   |  |  |  .  \|     |     \    |\     | |  | |     ||  |  |\     ||     |
   |__|  |__|\_||____/       \___| \____||____||_____||__|__| \____||_____|
-                                                                          
 " 
-echo "
+echo -e "${BROWN}
 ===============================================================
  - Hostname............: $HOSTNAME
  - Release.............: `cat /etc/redhat-release`

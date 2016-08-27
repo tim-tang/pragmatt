@@ -39,6 +39,6 @@
 [url "https://github.com/"]
 	insteadOf = git://github.com/
 [github]
-	user = Tim.Tang
+	user = tim-tang
 [http]
 	postBuffer = 157286400

@@ -28,8 +28,8 @@ Config {
         Run Memory ["-t","Mem: <usedratio>%","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Swap ["-t","Swap: <usedratio>%","-H","1024","-L","512","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Network "wlp3s0" ["-t","Net: <rx>Kb/s - <tx>Kb/s ","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
-        Run Battery ["-t", "<acstatus> <leftvbar>", "-h", "green", "-l", "red", "-m", "yellow"] 10,
-        Run Date "%a %b %_d %l:%M" "date" 10,
+        Run Battery ["-t","<leftvbar> <left>%/<timeleft>","-L","50","-H","75","-h","green","-n","yell","-l","red"] 10,
+        Run Date "%a %b %_d %H:%M:%S" "date" 10,
         Run StdinReader
     ],
     sepChar = "%",

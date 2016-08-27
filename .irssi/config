@@ -126,7 +126,7 @@ channels = (
   { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
   { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
   { name = "#smartos"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#riak-core"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#riak-core"; chatnet = "freenode"; autojoin = "No"; },
   { name = "#Project-FiFo"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##linux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#bash"; chatnet = "freenode"; autojoin = "yes"; },
@@ -391,3 +391,15 @@ settings = {
   "fe-common/core" = { autolog = "yes"; };
 };
 logs = { };
+ignores = (
+  {
+    level = "JOINS PARTS QUITS NICKS";
+    channels = (
+      "#smartos",
+      "#Project-FiFo",
+      "#bash",
+      "##linux",
+      "##networking"
+    );
+  }
+);

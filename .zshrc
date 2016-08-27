@@ -73,6 +73,10 @@ export LANG=en_US.UTF-8
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
+if [ ! -z "$TERM" ]; then
+    source /etc/motd
+fi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

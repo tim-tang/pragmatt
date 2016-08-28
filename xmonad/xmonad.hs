@@ -46,7 +46,7 @@ mydmenu = "dmenu_run -f -nb black -fn ProFontWindows:size=9.3:antialias=True"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
+myWorkspaces = ["1:Chat","2:Browser","3:Code","4:Cloud","5:Term", "6:Media"] ++ map show [7..9]
 
 
 ------------------------------------------------------------------------
@@ -64,16 +64,15 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Firefox"       --> doShift "2:web"
-    , className =? "google-chrome"  --> doShift "2:web"
+    [ className =? "Firefox"       --> doShift "2:Browser"
+    , className =? "google-chrome"  --> doShift "2:Browser"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Galculator"     --> doFloat
     , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
-    , resource  =? "Shotwell"       --> doFloat
-    , className =? "VLC"        --> doFloat
-    , className =? "VirtualBox"     --> doShift "4:vm"
-    , className =? "Irssi"          --> doShift "5:media"
+    , title =? "mutt"               --> doShift "5:Term"
+    , title =? "irssi"               --> doShift "5:Term"
+    , className =? "VLC"            --> doShift "6:Media"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -102,7 +101,6 @@ myLayout = avoidStruts (
 -- Currently based on the ir_black theme.
 --
 myNormalBorderColor  = "#7c7c7c"
--- myNormalBorderColor  = "#000000"
 myFocusedBorderColor = "#ffb6b0"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
@@ -324,6 +322,7 @@ myStartupHook = do
   spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
   spawn "ibus-daemon -rdx"
   spawn "fetchmail"
+  spawn "~/.xmonad/autostart"
   setWMName "LG3D"
 
 

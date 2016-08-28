@@ -1,0 +1,21 @@
+#!/bin/sh
+# Script to configure X, start common apps, and start xmonad.
+# Author: Vic Fryzel
+# http://github.com/vicfryzel/xmonad-config
+
+
+# Configure PATH so that we can access our scripts below
+PATH=$PATH:~/.xmonad/bin
+
+# Configure X
+# Start the system tray
+#tray &
+
+# Start Mutt
+gnome-terminal -e mutt &
+
+# Start Irssi
+gnome-terminal -e irssi &
+
+# Start a browser
+google-chrome &

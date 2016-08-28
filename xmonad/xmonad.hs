@@ -64,7 +64,7 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "firefox"       --> doShift "2:web"
+    [ className =? "Firefox"       --> doShift "2:web"
     , className =? "google-chrome"  --> doShift "2:web"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Galculator"     --> doFloat
@@ -112,7 +112,8 @@ tabConfig = defaultTheme {
     activeColor = "#000000",
     inactiveBorderColor = "#7C7C7C",
     inactiveTextColor = "#EEEEEE",
-    inactiveColor = "#000000"
+    inactiveColor = "#000000",
+    fontName = "xft:ProFontWindows:size=9.3:antialias=True"
 }
 
 -- Color of current window title in xmobar.
@@ -319,9 +320,10 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 myStartupHook = do
   spawn "xset r rate 250 60"
   spawn "xsetroot -cursor_name left_ptr" 
-  spawn "feh --bg-fill /home/flowam/.xmonad/wallpaper/wl3.png &"
+  spawn "feh --bg-fill /home/flowam/.xmonad/wallpaper/wl3.png"
   spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
   spawn "ibus-daemon -rdx"
+  spawn "fetchmail"
   setWMName "LG3D"
 
 

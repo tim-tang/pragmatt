@@ -10,7 +10,8 @@
 #
 
 GREEN='\033[1;32m'
-BROWN='\033[0;33m'
+BROWN='\033[0;36m'
+NC='\033[0m'
 USER=`whoami`
 HOSTNAME=`uname -n`
 ROOT=`df -Ph | grep fedora-root | awk '{print $4}' | tr -d '\n'`
@@ -66,4 +67,5 @@ echo -e "${BROWN}
  - System uptime.......: $upDays days $upHours hours $upMins minutes $upSecs seconds
  - Disk space ROOT.....: $ROOT remaining
 ================================================================
+${NC}
 "

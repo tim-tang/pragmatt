@@ -322,7 +322,7 @@ myStartupHook = do
   spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
   spawn "ibus-daemon -rdx"
   spawn "fetchmail"
-  spawn "~/.xmonad/autostart"
+  --spawn "~/.xmonad/autostart"
   setWMName "LG3D"
 
 

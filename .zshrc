@@ -6,7 +6,8 @@ export ZSH=/home/flowam/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="gnzh"
+#ZSH_THEME="gnzh"
+ZSH_THEME="jonathan"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -74,7 +75,7 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 
 if [ ! -z "$TERM" ]; then
-    source /etc/motd
+    source $HOME/.motd
 fi
 
 # Compilation flags

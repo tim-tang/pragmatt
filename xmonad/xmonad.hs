@@ -33,20 +33,27 @@ myScreensaver = "/usr/bin/gnome-screensaver-command --lock"
 
 -- The command to take a selective screenshot, where you select
 -- what you'd like to capture on the screen.
-mySelectScreenshot = "select-screenshot"
+mySelectScreenshot = "sshot"
 
 -- The command to take a fullscreen screenshot.
-myScreenshot = "screenshot"
+myScreenshot = "fshot"
 
 -- The command to run dmenu.
 mydmenu = "dmenu_run -f -nb black -fn ProFontWindows:size=9.3:antialias=True"
+
+myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
+            "for pid in `pgrep mutt`; do kill -9 $pid; done && " ++
+            "for pid in `pgrep google-chrome`; do kill -9 $pid; done && " ++
+            "xmonad --recompile && xmonad --restart"
+
+
 
 
 ------------------------------------------------------------------------
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:Chat","2:Browser","3:Code","4:Cloud","5:Term", "6:Media"] ++ map show [7..9]
+myWorkspaces = ["1:Chat","2:Browser","3:Code","4:Term","5:Cloud", "6:Media"] ++ map show [7..9]
 
 
 ------------------------------------------------------------------------
@@ -70,9 +77,9 @@ myManageHook = composeAll
     , className =? "Galculator"     --> doFloat
     , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
-    , title =? "mutt"               --> doShift "5:Term"
-    , title =? "irssi"               --> doShift "5:Term"
-    , className =? "VLC"            --> doShift "6:Media"
+    , title =? "mutt"               --> doShift "4:Term"
+    , title =? "irssi"               --> doShift "4:Term"
+    , className =? "mplayer"            --> doShift "6:Media"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -149,27 +156,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Take a selective screenshot using the command specified by mySelectScreenshot.
   , ((modMask .|. shiftMask, xK_p),
-     spawn mySelectScreenshot)
+     spawn "$HOME/.xmonad/bin/sshot")
 
   -- Take a full screenshot using the command specified by myScreenshot.
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
-     spawn myScreenshot)
+     spawn "$HOME/.xmonad/bin/fshot")
 
     -- Increase volume.
   , ((modMask .|. shiftMask, xK_o),
      spawn mydmenu)
-
-  -- Audio previous.
-  , ((0, 0x1008FF16),
-     spawn "")
-
-  -- Play/pause.
-  , ((0, 0x1008FF14),
-     spawn "")
-
-  -- Audio next.
-  , ((0, 0x1008FF17),
-     spawn "")
 
   -- Eject CD tray.
   , ((0, 0x1008FF2C),
@@ -200,8 +195,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      windows W.focusDown)
 
   -- Move focus to the next window.
-  , ((modMask, xK_j),
-     windows W.focusDown)
+  --, ((modMask, xK_j),
+  --   windows W.focusDown)
 
   -- Move focus to the previous window.
   , ((modMask, xK_k),
@@ -248,6 +243,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_q),
+  --   spawn myRestart)
      io (exitWith ExitSuccess))
 
   -- Restart xmonad.
@@ -318,7 +314,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 myStartupHook = do
   spawn "xset r rate 250 60"
   spawn "xsetroot -cursor_name left_ptr" 
-  spawn "feh --bg-fill /home/flowam/.xmonad/wallpaper/wl3.png"
+  spawn "feh --bg-fill $HOME/.xmonad/wallpaper/wl3.png"
   spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
   spawn "ibus-daemon -rdx"
   spawn "fetchmail"

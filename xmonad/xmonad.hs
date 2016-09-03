@@ -162,13 +162,14 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
      spawn "$HOME/.xmonad/bin/fshot")
 
-    -- Increase volume.
-  , ((modMask .|. shiftMask, xK_o),
+  -- Pop-up dmenu.
+  --, ((modMask .|. shiftMask, xK_o),
+  , ((modMask, xK_o),
      spawn mydmenu)
 
   -- Eject CD tray.
   , ((0, 0x1008FF2C),
-     spawn "eject -T")
+     spawn "eject -T /dev/sr0")
 
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
@@ -200,11 +201,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Move focus to the previous window.
   , ((modMask, xK_k),
-     windows W.focusUp  )
+     windows W.focusUp)
 
   -- Move focus to the master window.
   , ((modMask, xK_m),
-     windows W.focusMaster  )
+     windows W.focusMaster)
 
   -- Swap the focused window and the master window.
   , ((modMask, xK_Return),
@@ -216,7 +217,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Swap the focused window with the previous window.
   , ((modMask .|. shiftMask, xK_k),
-     windows W.swapUp    )
+     windows W.swapUp)
 
   -- Shrink the master area.
   , ((modMask, xK_h),
@@ -243,12 +244,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_q),
-  --   spawn myRestart)
      io (exitWith ExitSuccess))
 
   -- Restart xmonad.
   , ((modMask, xK_q),
-     restart "xmonad" True)
+     spawn myRestart)
+   --  restart "xmonad" True)
   ]
   ++
 
@@ -332,7 +333,9 @@ main = do
             ppOutput = hPutStrLn xmproc
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-          , ppSep = "   "
+          , ppSep = "<fc=#ff0000> >> </fc>"
+          , ppWsSep = "<fc=#ff0000> | </fc>"
+          , ppOrder = \(ws:l:t:_) -> [ws,t]
       }
       , manageHook = manageDocks <+> myManageHook
       --, startupHook = setWMName "LG3D"

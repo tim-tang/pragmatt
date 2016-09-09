@@ -3,11 +3,12 @@
     $ sudo yum install epel-release
     $ sudo yum install libXpm-devel.x86_64
     $ sudo yum install ghc libxml2-devel
-    $ cabal install xmobar --flags="all_extensions"
+    $ cabal install xmobar --flags="all_extensions"     
     $ sudo yum install xmonad xmonad xmonad-contrib-devel xmobar feh dmenu xcompmgr mutt fetchmail irssi promail tmux zsh xclip
     $ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
     $ sudo chsh -s /bin/zsh 
     $ sudo yum install ghc cabal-install ghc-X11 ghc-X11-devel ghc-X11-xft ghc-X11-xft-devel
+
     
 ## Install Vim
 
@@ -20,5 +21,11 @@
     $ sudo chmod 700 $HOME/.fetchmailrc
     $ mv $HOME/xmonad $HOME/.xmonad 
 
+## For CentOS7:
+* Build xcompmgr 
+* Build Feh
+* Need to build xmobar by yourself with utf-8 and xfs flag
+* Remove ibus (sudo yum remove ibus)
+* Install fcitx with local repo (https://github.com/1dot75cm/myrepo) install cloudpinyin
 
 > Don't forget to change password in .fetchmailrc

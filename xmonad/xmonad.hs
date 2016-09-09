@@ -157,9 +157,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Take a selective screenshot using the command specified by mySelectScreenshot.
   , ((modMask .|. shiftMask, xK_p),
      spawn "$HOME/.xmonad/bin/sshot")
+     --spawn "gnome-screenshot -a")
 
   -- Take a full screenshot using the command specified by myScreenshot.
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
+     --spawn "gnome-screenshot")
      spawn "$HOME/.xmonad/bin/fshot")
 
   -- Pop-up dmenu.

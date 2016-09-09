@@ -6,4 +6,8 @@
 
 SCREENSHOT_DIR=$HOME/screenshots
 mkdir -p $SCREENSHOT_DIR
-sleep 0.2; scrot -s "$SCREENSHOT_DIR/%Y-%m-%d-%H%M%S_\$wx\$h.png" -e "shotwell \$f"
+DATE=`date +%Y%m%d-%H%M%S`
+FILE=$SCREENSHOT_DIR/$DATE.png
+
+#sleep 0.2; scrot -s "$SCREENSHOT_DIR/%Y-%m-%d-%H%M%S_\$wx\$h.png" -e "shotwell \$f"
+sleep 0.2; gnome-screenshot -a -f $FILE && shotwell $FILE

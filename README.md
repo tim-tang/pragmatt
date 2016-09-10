@@ -29,8 +29,9 @@
 
     $ sudo yum install wireless-tools
     $ iwlist <interface> scan | grep -i essid
+    $ wpa_supplicant <ESSID> <PASSORD> > wifi.conf
+    $ wpa_supplicant -Dwext -i<interface> -c$HOME/wifi.conf
     $ iwconfig <interface> essid "xxxx"
-    $ iwconfig <interface> essid "xxxx" key PASSWORD (Optional)
     $ dhclient <interface>
     $ ifconfig <interface> up/down
 

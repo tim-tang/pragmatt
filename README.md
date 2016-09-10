@@ -21,11 +21,17 @@
     $ sudo chmod 700 $HOME/.fetchmailrc
     $ mv $HOME/xmonad $HOME/.xmonad 
 
-## For CentOS7:
-* Build xcompmgr 
-* Build Feh
-* Need to build xmobar by yourself with utf-8 and xfs flag
+## For CentOS7: * Build xcompmgr * Build Feh * Need to build xmobar by yourself with utf-8 and xfs flag
 * Remove ibus (sudo yum remove ibus)
 * Install fcitx with local repo (https://github.com/1dot75cm/myrepo) install cloudpinyin
+
+## Install Wireless Tools
+
+    $ sudo yum install wireless-tools
+    $ iwlist <interface> scan | grep -i essid
+    $ iwconfig <interface> essid "xxxx"
+    $ iwconfig <interface> essid "xxxx" key PASSWORD (Optional)
+    $ dhclient <interface>
+    $ ifconfig <interface> up/down
 
 > Don't forget to change password in .fetchmailrc

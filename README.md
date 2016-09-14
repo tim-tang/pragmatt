@@ -2,6 +2,10 @@
 
     $ cd pragmatt && ./install.sh
 
+## Macbook Air Fixes
+
+    $ ./mba-fix.sh
+
 ## For CentOS7: * Build xcompmgr * Build Feh * Need to build xmobar by yourself with utf-8 and xfs flag
 * Remove ibus (sudo yum remove ibus)
 * Install fcitx with local repo (https://github.com/1dot75cm/myrepo) install cloudpinyin

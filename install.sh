@@ -11,18 +11,18 @@ sudo usermod -a -G wheel $USER
 # ========================
 # Install AliYun Repo
 # ========================
+sudo yum install -y wget
 sudo wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 sudo yum clean all
 sudo yum makecache
-sudo yum update
+sudo yum update -y
 
 # ========================
 # Install Deps
 # ========================
-sudo yum install -y epel-release deltarpm yum*leaves* yum-cron
-sudo yum install -y libXpm-devel.x86_64
-sudo yum install -y ghc libxml2-devel
-sudo yum install -y ghc cabal-install ghc-X11 ghc-X11-devel ghc-X11-xft ghc-X11-xft-devel
+sudo yum install -y epel-release deltarpm yum-cron
+sudo yum install -y ghc haskell-platform gnutls-devel libgsasl-devel libxml2-devel zlib-devel ghc-zlib-devel libidn-devel
+sudo yum install -y cabal-install ghc-X11 ghc-X11-devel ghc-X11-xft ghc-X11-xft-devel
 sudo yum install -y dmenu xclip
 
 
@@ -41,6 +41,7 @@ fc-cache $PWD/fonts
 # Install OH My ZSH
 # ========================
 sudo yum install -y zsh
+rm -rf $HOME/.oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ln -sf $PWD/zshr $HOME/.zshrc
 sudo chsh -s $(which zsh)
@@ -48,7 +49,7 @@ sudo chsh -s $(which zsh)
 # ========================
 # Install Xmonad
 # ========================
-sudo yum install xmonad xmonad xmonad-contrib-devel xmobar  
+sudo yum install -y xmonad xmonad xmonad-contrib-devel xmobar  
 ln -sf $PWD/xmonad $HOME/.xmonad
 
 
@@ -76,8 +77,11 @@ ln -sf $PWD/tmux.conf $HOME/.tmux.conf
 # Install Vim
 # ========================
 sudo yum install -y vim
-git clone https://github.com/tim-tang/vimfiles.git ~/.vim
-./$HOME/.vim/install.sh
+rm -rf $HOME/.vim
+git clone https://github.com/tim-tang/vimfiles.git $HOME/.vim
+pushd $PWD
+cd $HOME/.vim && ./install.sh
+popd
 
 # ========================
 # Install MOTD
@@ -97,21 +101,18 @@ sudo yum install -y wireless-tools
 # ========================
 # Install Xmobar
 # ========================
-pushd $PWD
-mkdir -p $HOME/playground
-git clone https://github.com/jaor/xmobar.git $HOME/playground/xmobar
-cd $HOME/playground/xmobar
-runhaskell Setup.lhs configure --flags="with_xft,with_utf8"
-runhaskell Setup.lhs build
-sudo runhaskell Setup.lhs install
-popd
+cabal update
+cabal install c2hs
+cabal --force-reinstall install xmobar --flags="with_xft,with_utf8"
+
 
 # ========================
 # Install Feh
 # ========================
-sudo yum install -y imlib2-devel libcurl-devel libpng-devel libX11 libXinerama
+sudo yum install -y libXpm-devel.x86_64 libXt-devel imlib2-devel libcurl-devel libpng-devel libX11 libXinerama
 git clone https://github.com/derf/feh.git $HOME/playground/feh
 pushd $PWD
+rm -rf $HOME/playground/feh
 cd $HOME/playground/feh
 make
 sudo make install app=1
@@ -121,15 +122,7 @@ popd
 # Install xcompmgr
 # Please refer => http://www.voidcn.com/blog/jxm_csdn/article/p-6168328.html
 # ========================
-sudo yum install -y perl-Data-Dumper.x86_64
-sudo yum install -y autoconf.noarch
-sudo yum install -y perl-Thread-Queue.noarch
-sudo yum install -y perl-Test-Harness.noarch
-sudo yum install -y  automake.noarch
-sudo yum install -y libtool-ltdl-devel.x86_64
-sudo yum install -y xorg-x11-xtrans-devel.noarch
-sudo yum install -y xorg-x11-util-macros.noarch
-sudo yum install -y libXcomposite-devel.x86_64
+sudo yum install -y perl-Data-Dumper.x86_64 autoconf.noarch perl-Thread-Queue.noarch perl-Test-Harness.noarch automake.noarch libtool-ltdl-devel.x86_64 xorg-x11-xtrans-devel.noarch xorg-x11-util-macros.noarch libXcomposite-devel.x86_64
 pushd $PWD
 git clone https://anongit.freedesktop.org/git/xorg/app/xcompmgr.git $HOME/playground/xcompmgr
 cd $HOME/playground/xcompmgr

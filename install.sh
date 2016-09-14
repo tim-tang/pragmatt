@@ -25,6 +25,14 @@ sudo yum install -y ghc haskell-platform gnutls-devel libgsasl-devel libxml2-dev
 sudo yum install -y cabal-install ghc-X11 ghc-X11-devel ghc-X11-xft ghc-X11-xft-devel
 sudo yum install -y dmenu xclip
 
+# ========================
+# Install OH My ZSH
+# ========================
+sudo yum install -y zsh
+rm -rf $HOME/.oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+ln -sf $PWD/zshr $HOME/.zshrc
+sudo chsh -s $(which zsh) && exit 0
 
 # ========================
 # Install GIT
@@ -38,15 +46,6 @@ ln -sf $PWD/gitconfig $HOME/.gitconfig
 ln -sf $HOME/playground/fonts $HOME/.fonts
 fc-cache -f -v
 fc-list|grep -i 'pro'
-
-# ========================
-# Install OH My ZSH
-# ========================
-sudo yum install -y zsh
-rm -rf $HOME/.oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-ln -sf $PWD/zshr $HOME/.zshrc
-sudo chsh -s $(which zsh)
 
 # ========================
 # Install Xmonad

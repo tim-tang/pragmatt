@@ -35,7 +35,9 @@ ln -sf $PWD/gitconfig $HOME/.gitconfig
 # ========================
 # Install Fonts
 # ========================
-fc-cache $PWD/fonts
+ln -sf $HOME/playground/fonts $HOME/.fonts
+fc-cache -f -v
+fc-list|grep -i 'pro'
 
 # ========================
 # Install OH My ZSH
@@ -105,6 +107,18 @@ cabal update
 cabal install c2hs
 cabal --force-reinstall install xmobar --flags="with_xft,with_utf8"
 
+# ========================
+# Install Google Chrome
+# ========================
+sudo bash -c 'cat > /etc/yum.repo.d/google-chrome.repo <<EOF 
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
+enabled=1
+gpgcheck=0
+gpgkey=https://dl.google.com/linux/linux_signing_key.pub
+EOF'
+sudo yum install -y google-chrome-stable
 
 # ========================
 # Install Feh
@@ -124,6 +138,7 @@ popd
 # ========================
 sudo yum install -y perl-Data-Dumper.x86_64 autoconf.noarch perl-Thread-Queue.noarch perl-Test-Harness.noarch automake.noarch libtool-ltdl-devel.x86_64 xorg-x11-xtrans-devel.noarch xorg-x11-util-macros.noarch libXcomposite-devel.x86_64
 pushd $PWD
+rm -rf $HOME/playground/xcompmgr
 git clone https://anongit.freedesktop.org/git/xorg/app/xcompmgr.git $HOME/playground/xcompmgr
 cd $HOME/playground/xcompmgr
 ./autogen.sh 
@@ -136,6 +151,7 @@ popd
 # ========================
 sudo yum install -y yasm fribidi youtube-dl freetype-devel fribidi-devel fontconfig-devel harfbuzz-devel cmake mercurial nasm openssl-devel libX11-devel python-docutils luajit-devel libbluray-devel libdvdread-devel libcdio-paranoia-devel lcms2-devel pulseaudio-libs-devel jack-audio-connection-kit-devel alsa-lib-devel libdrm-devel libxkbcommon-devel libXScrnSaver-devel libXext-devel libXv-devel PyQt4-devel libvdpau-devel libva-devel gstreamer1-vaapi-devel libcaca-devel
 pushd $PWD
+rm -rf $HOME/playground/mpb-build
 git clone https://github.com/mpv-player/mpv-build.git $HOME/playground/mpb-build
 cd $HOME/playground/mpb-build
 echo --enable-openssl >> ffmpeg_options
@@ -143,3 +159,11 @@ echo --enable-nonfree >> ffmpeg_options
 ./rebuild -j4
 ./install
 popd
+
+# ========================
+# HouseKeeping
+# ========================
+sudo systemctl disable firewalld
+sudo yum remove selinux-policy
+
+echo "======  Finised To Setup Pragmatt Env! ====="

@@ -126,11 +126,12 @@ channels = (
   { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
   { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
   { name = "#smartos"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#riak-core"; chatnet = "freenode"; autojoin = "No"; },
   { name = "#Project-FiFo"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##linux"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#bash"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##networking"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#tuna"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#tuna-random"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#archlinux-cn"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#linuxba"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#ustclug"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -397,9 +398,11 @@ ignores = (
     channels = (
       "#smartos",
       "#Project-FiFo",
-      "#bash",
-      "##linux",
-      "##networking"
+      "#tuna",
+      "#tuna-random",
+      "#archlinux-cn",
+      "#linuxba",
+      "#ustclug"
     );
   }
 );

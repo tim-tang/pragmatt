@@ -21,7 +21,7 @@ sudo yum update -y
 # Install Deps
 # ========================
 sudo yum install -y epel-release deltarpm yum-cron
-sudo yum install -y ghc haskell-platform gnutls-devel libgsasl-devel libxml2-devel zlib-devel ghc-zlib-devel libidn-devel
+sudo yum install -y ghc libXpm-devel.x86_64  haskell-platform gnutls-devel libgsasl-devel libxml2-devel zlib-devel ghc-zlib-devel libidn-devel
 sudo yum install -y cabal-install ghc-X11 ghc-X11-devel ghc-X11-xft ghc-X11-xft-devel
 sudo yum install -y dmenu xclip
 
@@ -29,9 +29,10 @@ sudo yum install -y dmenu xclip
 # ========================
 # Install X11
 # ========================
-sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
-sudo yum install -y openssh-askpass python-matplotlib-tk tigervnc-server xemacs
-sudo yum groupinstall -y 'GNOME Desktop'
+#sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
+#sudo yum install -y xfce4-session xfce4-terminal xfce4-settings xfdesktop
+sudo yum groupinstall -y "GNOME Desktop" "Graphical Administration Tools"
+sudo systemctl set-default graphical.target
 
 # ========================
 # Install GIT
@@ -111,6 +112,7 @@ sudo yum install -y wireless-tools
 # ========================
 # Install Xmobar
 # ========================
+ln -sf $PWD/cabal $HOME/.cabal
 cabal update
 cabal install c2hs
 cabal --force-reinstall install xmobar --flags="with_xft,with_utf8"
@@ -118,7 +120,7 @@ cabal --force-reinstall install xmobar --flags="with_xft,with_utf8"
 # ========================
 # Install Google Chrome
 # ========================
-sudo bash -c 'cat > /etc/yum.repo.d/google-chrome.repo <<EOF 
+sudo bash -c 'cat > /etc/yum.repos.d/google-chrome.repo <<EOF 
 [google-chrome]
 name=google-chrome
 baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
@@ -131,10 +133,10 @@ sudo yum install -y google-chrome-stable
 # ========================
 # Install Feh
 # ========================
-sudo yum install -y libXpm-devel.x86_64 libXt-devel imlib2-devel libcurl-devel libpng-devel libX11 libXinerama
-git clone https://github.com/derf/feh.git $HOME/playground/feh
+sudo yum install -y libXt-devel imlib2-devel libcurl-devel libpng-devel libX11 libXinerama
 pushd $PWD
 rm -rf $HOME/playground/feh
+git clone https://github.com/derf/feh.git $HOME/playground/feh
 cd $HOME/playground/feh
 make
 sudo make install app=1

@@ -62,7 +62,7 @@ export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
 
-export PATH="/home/flowam/.xmonad/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/.cabal/bin:$HOME/.xmonad/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 
 source $ZSH/oh-my-zsh.sh

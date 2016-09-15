@@ -48,7 +48,7 @@ ln -sf $PWD/gitconfig $HOME/.gitconfig
 sudo yum install -y zsh
 rm -rf $HOME/.oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-ln -sf $PWD/zshr $HOME/.zshrc
+ln -sf $PWD/zshrc $HOME/.zshrc
 #sudo chsh -s $(which zsh) && exit 0
 
 # ========================
@@ -61,7 +61,10 @@ fc-cache -f -v
 # Install Xmonad
 # ========================
 sudo yum install -y xmonad xmonad xmonad-contrib-devel xmobar  
-ln -sf $PWD/xmonad $HOME/.xmonad
+ln -sf $PWD/xmonad/bin $HOME/.xmonad/bin
+ln -sf $PWD/xmonad/wallpaper $HOME/.xmonad/wallpaper
+ln -sf $PWD/xmonad/xmobar.sh $HOME/.xmonad/xmobar.hs
+ln -sf $PWD/xmonad/xmonad.sh $HOME/.xmonad/xmonad.hs
 
 
 # ========================
@@ -174,6 +177,6 @@ popd
 # HouseKeeping
 # ========================
 sudo systemctl disable firewalld
-sudo yum remove selinux-policy
+sudo yum remove -y selinux-policy
 
 echo "======  Finised To Setup Pragmatt Env! ====="

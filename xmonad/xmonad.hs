@@ -320,11 +320,10 @@ myStartupHook = do
   spawn "xsetroot -cursor_name left_ptr" 
   spawn "feh --bg-fill $HOME/.xmonad/wallpaper/wl3.png"
   spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
-  --spawn "ibus-daemon -rdx"
-  spawn "fcitx -D"
+  spawn "ibus-daemon -xim &"
+  -- spawn "fcitx -D"
   spawn "fetchmail"
-  --spawn "~/.xmonad/autostart"
-  setWMName "LG3D"
+  -- setWMName "LG3D"
 
 
 ------------------------------------------------------------------------

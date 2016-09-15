@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipfail
+set -euo pipefail
 
 # ========================
 # Install sudoers without password
@@ -25,14 +25,13 @@ sudo yum install -y ghc haskell-platform gnutls-devel libgsasl-devel libxml2-dev
 sudo yum install -y cabal-install ghc-X11 ghc-X11-devel ghc-X11-xft ghc-X11-xft-devel
 sudo yum install -y dmenu xclip
 
+
 # ========================
-# Install OH My ZSH
+# Install X11
 # ========================
-sudo yum install -y zsh
-rm -rf $HOME/.oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-ln -sf $PWD/zshr $HOME/.zshrc
-sudo chsh -s $(which zsh) && exit 0
+sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
+sudo yum install -y openssh-askpass python-matplotlib-tk tigervnc-server xemacs
+sudo yum groupinstall -y 'GNOME Desktop'
 
 # ========================
 # Install GIT
@@ -40,12 +39,22 @@ sudo chsh -s $(which zsh) && exit 0
 sudo yum install -y git
 ln -sf $PWD/gitconfig $HOME/.gitconfig
 
+
+
+# ========================
+# Install OH My ZSH
+# ========================
+sudo yum install -y zsh
+rm -rf $HOME/.oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+ln -sf $PWD/zshr $HOME/.zshrc
+#sudo chsh -s $(which zsh) && exit 0
+
 # ========================
 # Install Fonts
 # ========================
 ln -sf $HOME/playground/fonts $HOME/.fonts
 fc-cache -f -v
-fc-list|grep -i 'pro'
 
 # ========================
 # Install Xmonad

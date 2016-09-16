@@ -20,3 +20,7 @@
     $ ifconfig <interface> up/down
 
 > Don't forget to change password in .fetchmailrc
+
+## Integrate Wechat with Irssi:
+
+please refer => https://github.com/sjdy521/Mojo-Weixin

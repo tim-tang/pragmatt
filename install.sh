@@ -160,6 +160,15 @@ make
 sudo make install
 popd
 
+
+# ========================
+# Install Mojo Weixin
+# ========================
+sudo yum install -y openssl-devel
+cpan -i App::cpanminus
+cpanm --mirror http://mirrors.163.com/cpan/ Mojo::Weixin
+cpanm -v Mojo::IRC::Server::Chinese
+
 # ========================
 # Install MPV Player
 # ========================

@@ -36,7 +36,7 @@ chatnets = {
 channels = (
   { name = "#archlinux-cn"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#linuxba"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#ustclug"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#ustclug"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#tuna"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#tuna-random"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#smartos"; chatnet = "freenode"; autojoin = "yes"; },

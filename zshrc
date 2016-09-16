@@ -101,3 +101,26 @@ fi
 alias open="/usr/bin/nautilus"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+#############################
+#        Functions          #
+#############################
+# Start Mojo weixin 
+function wechat() {
+    perl $HOME/.irssi/scripts/irc-wechat.pl
+}
+
+# set dual monitors
+#function dual(){
+#    xrandr --output edp1 --primary --right-of HDMI1 --output HDMI1 --auto
+#}
+#
+## set exactly alike monitors
+#function same(){
+#    xrandr --output HDMI1 --auto
+#}
+#
+## set single monitor
+#function single(){
+#    xrandr --output HDMI1 --off
+#}

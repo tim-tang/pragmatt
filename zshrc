@@ -110,17 +110,17 @@ function wechat() {
     perl $HOME/.irssi/scripts/irc-wechat.pl
 }
 
-# set dual monitors
-#function dual(){
-#    xrandr --output edp1 --primary --right-of HDMI1 --output HDMI1 --auto
-#}
-#
-## set exactly alike monitors
-#function same(){
-#    xrandr --output HDMI1 --auto
-#}
-#
-## set single monitor
-#function single(){
-#    xrandr --output HDMI1 --off
-#}
+# Set dual monitors
+function dual(){
+    xrandr --output eDP1 --primary --left-of DP1 --output DP1 --auto
+}
+
+# Set exactly alike monitors
+function same(){
+    xrandr --output DP1 --auto
+}
+
+# Set single monitor
+function single(){
+    xrandr --output DP1 --off
+}

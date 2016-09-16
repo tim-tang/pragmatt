@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/flowam/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -61,8 +61,14 @@ plugins=(git)
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
+export PERL5LIB=$HOME/perl5:$HOME/perl5/lib/perl5
 
-export PATH="$HOME/.cabal/bin:$HOME/.xmonad/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+#export XIM=fcitx  
+#export GTK_IM_MODULE=fcitx
+#export XMODIFIERS=@im=fcitx  
+#export QT_IM_MODULE=fcitx
+
+export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 
 source $ZSH/oh-my-zsh.sh

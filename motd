@@ -14,7 +14,7 @@ BROWN='\033[0;36m'
 NC='\033[0m'
 USER=`whoami`
 HOSTNAME=`uname -n`
-ROOT=`df -Ph | grep fedora-root | awk '{print $4}' | tr -d '\n'`
+ROOT=`df -Ph | grep centos-root | awk '{print $4}' | tr -d '\n'`
 #HOME=`df -Ph | grep home | awk '{print $4}' | tr -d '\n'`
 #BACKUP=`df -Ph | grep backup | awk '{print $4}' | tr -d '\n'`
 

@@ -313,7 +313,7 @@ settings = {
     nick = "pragmatt";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { autolog = "yes"; theme="default"};
+  "fe-common/core" = { autolog = "yes"; theme="default";}
 };
 logs = { };
 ignores = (

@@ -56,6 +56,13 @@ plugins=(git)
 ######################
 # User configuration #
 ######################
+#
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+#export LANG=zh_CN.UTF-8
+#
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export QT_IM_MODULE=ibus
@@ -63,22 +70,10 @@ export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
 export PERL5LIB=$HOME/perl5:$HOME/perl5/lib/perl5
 
-#export XIM=fcitx  
-#export GTK_IM_MODULE=fcitx
-#export XMODIFIERS=@im=fcitx  
-#export QT_IM_MODULE=fcitx
-
 export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 
 source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-#export LANG=zh_CN.UTF-8
-
-# Preferred editor for local and remote sessions
-export EDITOR='vim'
 
 if [ ! -z "$TERM" ]; then
     source $HOME/.motd

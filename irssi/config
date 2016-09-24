@@ -44,6 +44,7 @@ channels = (
   { name = "#善流:全体"; chatnet = "wechat"; autojoin = "yes"; },
   { name = "#善流:运维"; chatnet = "wechat"; autojoin = "yes"; },
   { name = "#善流:交易系统"; chatnet = "wechat"; autojoin = "yes"; },
+  { name = "#善流:数据服务"; chatnet = "wechat"; autojoin = "yes"; },
   { name = "#善流:分析与可视化"; chatnet = "wechat"; autojoin = "yes"; },
   { name = "#善流:学习园地"; chatnet = "wechat"; autojoin = "yes"; },
   { name = "#善流:托管"; chatnet = "wechat"; autojoin = "yes"; },

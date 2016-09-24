@@ -160,6 +160,17 @@ make
 sudo make install
 popd
 
+# ========================
+# Install Arcanist
+# ========================
+sudo yum install php-cli
+pushd $PWD
+cd /opt
+sudo git clone https://github.com/phacility/arcanist.git
+sudo git clone https://github.com/phacility/libphutil.git
+sudo ln -s /opt/arcanist/bin/arc /usr/bin/arc
+arc set-config editor "/usr/bin/vim"
+popd
 
 # ========================
 # Install Mojo Weixin

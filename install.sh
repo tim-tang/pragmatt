@@ -82,6 +82,12 @@ ln -sf $PWD/procmailrc $HOME/.procmailrc
 sudo yum install -y irssi 
 ln -sf $PWD/irssi $HOME/.irssi
 
+
+# ========================
+# Install Xmodmap
+# ========================
+ln -sf $PWD/Xmodmap $HOME/.Xmodmap
+
 # ========================
 # Install Tmux
 # ========================

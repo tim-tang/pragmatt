@@ -39,7 +39,7 @@ mySelectScreenshot = "sshot"
 myScreenshot = "fshot"
 
 -- The command to run dmenu.
-mydmenu = "dmenu_run -f -nb black -fn ProFontWindows:size=9.3:antialias=True"
+mydmenu = "dmenu_run -f -nb black -fn 'ProFontWindows-9.3'"
 
 myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
             "for pid in `pgrep mutt`; do kill -9 $pid; done && " ++
@@ -79,7 +79,7 @@ myManageHook = composeAll
     , className =? "Gimp"           --> doFloat
     , title =? "mutt"               --> doShift "4:Term"
     , title =? "irssi"               --> doShift "4:Term"
-    , className =? "mplayer"            --> doShift "6:Media"
+    , className =? "mpv"            --> doShift "6:Media"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -317,13 +317,13 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 myStartupHook = do
   spawn "xset r rate 250 60"
   spawn "xset m 8 3"
+  spawn "xmodmap $HOME/.xmonad/.Xmodmap"
   spawn "xsetroot -cursor_name left_ptr" 
   spawn "feh --bg-fill $HOME/.xmonad/wallpaper/wl3.png"
-  spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &"
-  spawn "ibus-daemon -xim &"
-  -- spawn "fcitx -D"
+  spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.75 -D3 &"
+  spawn "ibus-daemon --xim &"
   spawn "fetchmail"
-  -- setWMName "LG3D"
+  --setWMName "LG3D"
 
 
 ------------------------------------------------------------------------

@@ -39,7 +39,10 @@ mySelectScreenshot = "sshot"
 myScreenshot = "fshot"
 
 -- The command to run dmenu.
-mydmenu = "dmenu_run -f -nb black -fn 'ProFontWindows-9.3'"
+-- mydmenu = "dmenu_run -f -nb black -fn 'ProFontWindows-9.3'"
+mydmenu = "dmenu_run -f -nb black -fn 'gohufont-9.3'"
+
+myswitch = "xswitch"
 
 myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
             "for pid in `pgrep mutt`; do kill -9 $pid; done && " ++
@@ -53,7 +56,7 @@ myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:Chat","2:Browser","3:Code","4:Term","5:Cloud", "6:Media"] ++ map show [7..9]
+myWorkspaces = ["1:Dev","2:Browser","3:Code","4:Term","5:Cloud", "6:Media"] ++ map show [7..9]
 
 
 ------------------------------------------------------------------------
@@ -72,7 +75,7 @@ myWorkspaces = ["1:Chat","2:Browser","3:Code","4:Term","5:Cloud", "6:Media"] ++ 
 --
 myManageHook = composeAll
     [ className =? "Firefox"       --> doShift "2:Browser"
-    , className =? "google-chrome"  --> doShift "2:Browser"
+    , className =? "Google-chrome"  --> doShift "2:Browser"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Galculator"     --> doFloat
     , className =? "Steam"          --> doFloat
@@ -118,7 +121,7 @@ tabConfig = defaultTheme {
     inactiveBorderColor = "#7C7C7C",
     inactiveTextColor = "#EEEEEE",
     inactiveColor = "#000000",
-    fontName = "xft:ProFontWindows:size=9.3:antialias=True"
+    fontName = "xft:gohufont:size=9.3:antialias=False"
 }
 
 -- Color of current window title in xmobar.
@@ -173,6 +176,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((0, 0x1008FF2C),
      spawn "eject -T /dev/sr0")
 
+  -- Swith inputmethods.
+  , ((modMask, xK_space),
+     spawn myswitch)
+
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
   --
@@ -182,8 +189,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      kill)
 
   -- Cycle through the available layout algorithms.
-  , ((modMask, xK_space),
-     sendMessage NextLayout)
+  --, ((modMask, xK_space),
+  --   sendMessage NextLayout)
 
   --  Reset the layouts on the current workspace to default.
   , ((modMask .|. shiftMask, xK_space),
@@ -322,7 +329,6 @@ myStartupHook = do
   spawn "feh --bg-fill $HOME/.xmonad/wallpaper/wl3.png"
   spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.75 -D3 &"
   spawn "ibus-daemon --xim &"
-  spawn "fetchmail"
   --setWMName "LG3D"
 
 
@@ -330,7 +336,7 @@ myStartupHook = do
 -- Run xmonad with all the defaults we set up.
 --
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
+  xmproc <- spawnPipe "/usr/local/bin/xmobar ~/.xmonad/xmobar.hs"
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc

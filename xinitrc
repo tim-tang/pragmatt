@@ -19,10 +19,8 @@ export LANG=en_US.UTF-8
 export XMODIFIERS="@im=ibus"
 export QT_IM_MODULE=ibus
 export GTK_IM_MODULE=ibus
-#export XIM=ibus
-#export XIM_ARGS="-d"
-#export XI
 ibus-daemon --xim -d
+#ibus engine libpinyin
 
 
 # Configure X

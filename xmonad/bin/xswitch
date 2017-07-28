@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+EN="xkb:us::eng"
+CN=libpinyin
+
+ENGINE=$(ibus engine)
+if [[ "${ENGINE}" == "${EN}" ]]; then
+    ibus engine "${CN}"
+else
+    ibus engine "${EN}"
+fi
+

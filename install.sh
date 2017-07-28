@@ -60,10 +60,26 @@ mkdir -p $HOME/.fonts
 ln -sf $PWD/fonts $HOME/.fonts
 fc-cache -f -v
 
+
 # ========================
-# Install Xmonad
+# Install Xmobar
 # ========================
-#sudo yum install -y xmonad xmonad xmonad-contrib-devel xmobar  
+pushd $PWD
+rm -rf /tmp/xmobar
+git clone git://github.com/jaor/xmobar /tmp/xmobar
+cd /tmp/xmobar
+runhaskell Setup.lhs configure --flags="with_utf8"
+runhaskell Setup.lhs configure --flags="with_xft"
+runhaskell Setup.lhs build
+runhaskell Setup.lhs install
+popd
+#cabal update
+#cabal install c2hs
+
+# ========================
+# Install XMonad
+# ========================
+sudo yum install -y xmonad xmonad xmonad-contrib-devel
 mkdir -p $HOME/.xmonad
 ln -sf $PWD/xmonad/bin $HOME/.xmonad/bin
 ln -sf $PWD/xmonad/wallpaper $HOME/.xmonad/wallpaper
@@ -126,13 +142,6 @@ sudo yum install -y libreswan xl2tpd ppp
 # ========================
 sudo yum install -y wireless-tools
 
-# ========================
-# Install Xmobar
-# ========================
-ln -sf $PWD/cabal $HOME/.cabal
-cabal update
-cabal install c2hs
-cabal --force-reinstall install xmobar --flags="with_xft,with_utf8"
 
 # ========================
 # Install Google Chrome

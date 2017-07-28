@@ -4,8 +4,8 @@
 
 -- This is setup for dual 1920x1080 monitors, with the right monitor as primary
 Config {
-    font = "xft:ProFontWindows:size=9.3:antialias=True",
-    additionalFonts = ["xft:ProFontWindows:size=9.4:antialias=true:oblique"],
+    font = "xft:gohufont:size=9.3:antialias=false",
+    additionalFonts = ["xft:gohufont:size=9.4:antialias=true:oblique"],
     textOffset = -1,
     iconOffset = -1,
     allDesktops = True,
@@ -17,7 +17,7 @@ Config {
     bgColor = "#202020",
     fgColor = "orange",
     position = Static { xpos = 0, ypos = 0, width = 1440, height = 18 },
-    --position = TopW L 60,
+    -- position = TopW L 60,
     alpha = 255,
     border = NoBorder,
     borderColor = "gray",

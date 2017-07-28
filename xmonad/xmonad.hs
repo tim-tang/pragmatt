@@ -47,6 +47,7 @@ myswitch = "xswitch"
 myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
             "for pid in `pgrep mutt`; do kill -9 $pid; done && " ++
             "for pid in `pgrep google-chrome`; do kill -9 $pid; done && " ++
+            "for pid in `pgrep firefox`; do kill -9 $pid; done && " ++
             "xmonad --recompile && xmonad --restart"
 
 
@@ -56,7 +57,7 @@ myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:Dev","2:Browser","3:Code","4:Term","5:Cloud", "6:Media"] ++ map show [7..9]
+myWorkspaces = ["1:Code","2:Browser","3:Eclipse","4:Term","5:Cloud", "6:Media"] ++ map show [7..9]
 
 
 ------------------------------------------------------------------------
@@ -77,7 +78,7 @@ myManageHook = composeAll
     [ className =? "Firefox"       --> doShift "2:Browser"
     , className =? "Google-chrome"  --> doShift "2:Browser"
     , resource  =? "desktop_window" --> doIgnore
-    , className =? "Galculator"     --> doFloat
+    , className =? "Eclipse"        --> doShift "3:Eclipse"
     , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
     , title =? "mutt"               --> doShift "4:Term"
@@ -328,7 +329,6 @@ myStartupHook = do
   spawn "xsetroot -cursor_name left_ptr" 
   spawn "feh --bg-fill $HOME/.xmonad/wallpaper/wl3.png"
   spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.75 -D3 &"
-  spawn "ibus-daemon --xim &"
   --setWMName "LG3D"
 
 

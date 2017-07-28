@@ -60,25 +60,25 @@ plugins=(git)
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 #export LANG=zh_CN.UTF-8
-#
+export HISTTIMEFORMAT="%F %T "
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
-
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 # export MANPATH="/usr/local/man:$MANPATH"
 export PERL5LIB=$HOME/perl5:$HOME/perl5/lib/perl5
 export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$PATH"
 source $ZSH/oh-my-zsh.sh
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+
+export LD_LIBRARY_PATH=/home/pragmatt/phab/apus/build/lib:/lib:/lib/python:
+export PYTHONPATH=/home/pragmatt/phab/virgo-build/lib/python:/home/pragmatt/phab/virgo/tools:/home/pragmatt/phab/aries/src/python:/home/pragmatt/phab/apus/build/lib/python:/home/pragmatt/phab/aquarius/aqua-facility/src/python
+export VIRGO_SRC_ROOT=/home/pragmatt/phab/virgo
+export VIRGO_LIB_ROOT=/home/pragmatt/phab/virgo-build
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 #############################
 #        Init               #
 #############################

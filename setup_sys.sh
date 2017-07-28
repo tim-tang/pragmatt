@@ -8,6 +8,10 @@ set -euo pipefail
 #echo 'pragmatt ALL=(ALL:ALL) ALL' >> /etc/sudoers
 #sudo usermod -a -G wheel $USER
 
+# Optional: remove hourly yum cron; modify /etc/yum/yum-cron.conf to set 
+#     update_cmd=security and apply_updates=yes.
+# Use http://mirrors.aliyun.com for base, updates, and epel repos. 
+
 # ========================
 # Install AliYun Repo
 # ========================

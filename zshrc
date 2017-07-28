@@ -65,25 +65,11 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export QT_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export GTK_IM_MODULE=ibus
 export PERL5LIB=$HOME/perl5:$HOME/perl5/lib/perl5
-
 export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$PATH"
-
-
 source $ZSH/oh-my-zsh.sh
-
-if [ ! -z "$TERM" ]; then
-    source $HOME/.motd
-fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -93,29 +79,13 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias open="/usr/bin/nautilus"
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-
 #############################
-#        Functions          #
+#        Init               #
 #############################
-# Start Mojo weixin 
-function wechat() {
-    perl $HOME/.irssi/scripts/irc-wechat.pl
-}
+if [ ! -z "$TERM" ]; then
+    source $HOME/.motd
+fi
 
-# Set dual monitors
-function dual(){
-    xrandr --output eDP1 --primary --left-of DP1 --output DP1 --auto
-}
-
-# Set exactly alike monitors
-function same(){
-    xrandr --output DP1 --auto
-}
-
-# Set single monitor
-function single(){
-    xrandr --output DP1 --off
-}
+if [ -f ~/.alias ]; then
+    . $HOME/.alias
+fi

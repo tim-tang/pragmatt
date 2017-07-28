@@ -70,6 +70,16 @@ ln -sf $PWD/xmonad/wallpaper $HOME/.xmonad/wallpaper
 ln -sf $PWD/xmonad/xmobar.hs $HOME/.xmonad/xmobar.hs
 ln -sf $PWD/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 
+# ========================
+# Install Xinitrc
+# ========================
+ln -sf $PWD/xinitrc $HOME/.xinitrc
+
+# ========================
+# Install System
+# ========================
+ln -sf $PWD/motd $HOME/.motd
+ln -sf $PWD/alias $HOME/.alias
 
 # ========================
 # Install Mutt & Fetch & Procmail
@@ -105,10 +115,6 @@ pushd $PWD
 cd $HOME/.vim && ./install.sh
 popd
 
-# ========================
-# Install MOTD
-# ========================
-ln -sf $PWD/motd $HOME/.motd
 
 # ========================
 # Install XL2TP & IPsec

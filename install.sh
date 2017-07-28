@@ -5,8 +5,8 @@ set -euo pipefail
 # Install sudoers without password
 # ========================
 #sudo -i
-#echo '$USER ALL=(ALL:ALL) ALL' >> /etc/sudoers
-sudo usermod -a -G wheel $USER
+#echo 'pragmatt ALL=(ALL:ALL) ALL' >> /etc/sudoers
+#sudo usermod -a -G wheel $USER
 
 # ========================
 # Install AliYun Repo
@@ -29,9 +29,10 @@ sudo yum install -y dmenu xclip
 # ========================
 # Install X11
 # ========================
-#sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
-#sudo yum install -y xfce4-session xfce4-terminal xfce4-settings xfdesktop
+sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
+sudo yum install -y xfce4-session xfce4-terminal xfce4-settings xfdesktop
 sudo yum groupinstall -y "GNOME Desktop" "Graphical Administration Tools"
+sudo yum groupinstall -y "GNOME Desktop"
 sudo systemctl set-default graphical.target
 
 # ========================
@@ -55,26 +56,26 @@ ln -sf $PWD/zshrc $HOME/.zshrc
 # ========================
 # Install Fonts
 # ========================
-ln -sf $HOME/playground/fonts $HOME/.fonts
+mkdir -p $HOME/.fonts
+ln -sf $PWD/fonts $HOME/.fonts
 fc-cache -f -v
 
 # ========================
 # Install Xmonad
 # ========================
-sudo yum install -y xmonad xmonad xmonad-contrib-devel xmobar  
+#sudo yum install -y xmonad xmonad xmonad-contrib-devel xmobar  
+mkdir -p $HOME/.xmonad
 ln -sf $PWD/xmonad/bin $HOME/.xmonad/bin
 ln -sf $PWD/xmonad/wallpaper $HOME/.xmonad/wallpaper
-ln -sf $PWD/xmonad/xmobar.sh $HOME/.xmonad/xmobar.hs
-ln -sf $PWD/xmonad/xmonad.sh $HOME/.xmonad/xmonad.hs
+ln -sf $PWD/xmonad/xmobar.hs $HOME/.xmonad/xmobar.hs
+ln -sf $PWD/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 
 
 # ========================
 # Install Mutt & Fetch & Procmail
 # ========================
-sudo yum install -y mutt fetchmail procmail 
+sudo yum install -y mutt
 ln -sf $PWD/muttrc $HOME/.muttrc
-ln -sf $PWD/fetchmailrc $HOME/.fetchmailrc
-ln -sf $PWD/procmailrc $HOME/.procmailrc
 
 # ========================
 # Install Irssi
@@ -182,9 +183,9 @@ popd
 # Install Mojo Weixin
 # ========================
 sudo yum install -y openssl-devel
-cpan -i App::cpanminus
-cpanm --mirror http://mirrors.163.com/cpan/ Mojo::Weixin
-cpanm -v Mojo::IRC::Server::Chinese
+#cpan -i App::cpanminus
+#cpanm --mirror http://mirrors.163.com/cpan/ Mojo::Weixin
+#cpanm -v Mojo::IRC::Server::Chinese
 
 # ========================
 # Install MPV Player
@@ -196,8 +197,8 @@ git clone https://github.com/mpv-player/mpv-build.git $HOME/playground/mpb-build
 cd $HOME/playground/mpb-build
 echo --enable-openssl >> ffmpeg_options
 echo --enable-nonfree >> ffmpeg_options
-./rebuild -j4
-./install
+sudo ./rebuild -j4
+sudo ./install
 popd
 
 # ========================

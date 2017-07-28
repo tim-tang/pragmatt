@@ -52,16 +52,11 @@ echo -e "${GREEN}
                |_____|     `cat /etc/redhat-release`" 
 
 echo -e "${BROWN}
-===============================================================
- - Hostname............: $HOSTNAME
- - Users...............: Currently `users | wc -w` user(s) logged on
-================================================================
  - Current user........: $USER
  - CPU usage...........: $LOAD1, $LOAD5, $LOAD15 (1, 5, 15 min)
  - Memory used.........: $MEMORY1 / $MEMORY2
  - Swap in use.........: `free -m | tail -n 1 | awk '{print $3}'` MB
  - Processes...........: $PSA running
  - System uptime.......: $upDays days $upHours hours $upMins minutes $upSecs seconds
- - Disk space ROOT.....: $ROOT remaining
-================================================================${NC}
+ - Disk space ROOT.....: $ROOT remaining ${NC}
 "

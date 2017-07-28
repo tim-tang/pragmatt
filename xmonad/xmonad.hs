@@ -317,7 +317,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 myStartupHook = do
   spawn "xset r rate 250 60"
   spawn "xset m 8 3"
-  spawn "xmodmap $HOME/.xmonad/.Xmodmap"
+  spawn "xmodmap $HOME/.Xmodmap"
   spawn "xsetroot -cursor_name left_ptr" 
   spawn "feh --bg-fill $HOME/.xmonad/wallpaper/wl3.png"
   spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.75 -D3 &"

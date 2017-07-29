@@ -34,8 +34,6 @@ sudo yum install -y dmenu xclip
 # Install X11
 # ========================
 sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
-sudo yum install -y xfce4-session xfce4-terminal xfce4-settings xfdesktop
-sudo yum groupinstall -y "GNOME Desktop" "Graphical Administration Tools"
 sudo yum groupinstall -y "GNOME Desktop"
 sudo systemctl set-default graphical.target
 
@@ -96,6 +94,7 @@ ln -sf $PWD/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 sudo yum install -y rxvt-unicode-ml
 ln -sf $PWD/Xresources $HOME/.Xresources
 ln -sf $PWD/xinitrc $HOME/.xinitrc
+sudo localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
 
 # ========================
 # Install System

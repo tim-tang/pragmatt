@@ -27,7 +27,7 @@ import qualified Data.Map        as M
 -- certain contrib modules.
 --
 -- myTerminal = "/usr/bin/gnome-terminal"
-myTerminal = "/bin/urxvt -e tmux"
+myTerminal = "/bin/urxvt-ml -e tmux"
 
 -- The command to lock the screen or show the screensaver.
 myScreensaver = "/usr/bin/gnome-screensaver-command --lock"

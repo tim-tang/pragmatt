@@ -6,6 +6,7 @@ CN=libpinyin
 ENGINE=$(ibus engine)
 if [[ "${ENGINE}" == "${EN}" ]]; then
     ibus engine "${CN}"
+    #xmodmap $HOME/.Xmodmap
 else
     ibus engine "${EN}"
 fi

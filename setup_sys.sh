@@ -93,6 +93,7 @@ ln -sf $PWD/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 # ========================
 # Install Xinitrc
 # ========================
+sudo yum install -y rxvt-unicode-ml
 ln -sf $PWD/Xresources $HOME/.Xresources
 ln -sf $PWD/xinitrc $HOME/.xinitrc
 
@@ -103,7 +104,7 @@ ln -sf $PWD/motd $HOME/.motd
 ln -sf $PWD/alias $HOME/.alias
 
 # ========================
-# Install Mutt & Fetch & Procmail
+# Install Mutt
 # ========================
 sudo yum install -y mutt
 ln -sf $PWD/muttrc $HOME/.muttrc
@@ -193,7 +194,7 @@ popd
 # ========================
 # Install Arcanist
 # ========================
-sudo yum install php-cli
+sudo yum install -y php-cli
 pushd $PWD
 cd /opt
 sudo git clone https://github.com/phacility/arcanist.git

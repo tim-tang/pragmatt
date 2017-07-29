@@ -27,6 +27,7 @@ import qualified Data.Map        as M
 -- certain contrib modules.
 --
 myTerminal = "/usr/bin/gnome-terminal"
+-- myTerminal = "/bin/urxvt"
 
 -- The command to lock the screen or show the screensaver.
 myScreensaver = "/usr/bin/gnome-screensaver-command --lock"

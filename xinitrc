@@ -1,7 +1,6 @@
 #!/bin/sh
 # Script to configure X, start common apps, and start xmonad.
-# Author: Vic Fryzel
-# http://github.com/vicfryzel/xmonad-config
+# Author: Tim.Tang
 
 if [ -d /etc/X11/xinit/xinitrc.d/ ];
 then
@@ -25,16 +24,19 @@ ibus-daemon --xim -d
 
 # Configure X
 xsetroot -cursor_name left_ptr &
-xrdb -merge ~/.Xdefaults &
+xrdb -merge ~/.Xresources&
 setxkbmap -option "ctrl:nocaps" &
 
 # Start a window compositor. This ensures Google Chrome paints correctly.
 xcompmgr -n &
 
 # Start the system tray
-tray &
+# tray &
 
 # Start sound server
 pulseaudio --start --log-target=syslog &
+
+# Start Firefox
+firefox &
 
 exec xmonad

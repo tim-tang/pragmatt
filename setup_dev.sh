@@ -36,5 +36,9 @@ sudo yum install -y curl doxygen graphviz htop mercurial psmisc screen s3cmd gdb
 # Clean up a bit.
 sudo yum remove -y --remove-leaves abrt-libs audit chrony dyninst* firewalld kexec-tools libfprint libreport* lvm2 selinux* sos policy*
 
+sudo systemctl stop lvm2-monitor
+sudo systemctl disable lvm2-monitor
+sudo systemctl stop lvm2-lvmetad
+sudo systemctl disable lvm2-lvmetad
 
-echo "Bingooo...."
+echo "Bingooo......"

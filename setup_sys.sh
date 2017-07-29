@@ -93,6 +93,7 @@ ln -sf $PWD/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 # ========================
 # Install Xinitrc
 # ========================
+ln -sf $PWD/Xresources $HOME/.Xresources
 ln -sf $PWD/xinitrc $HOME/.xinitrc
 
 # ========================
@@ -138,6 +139,9 @@ popd
 
 # ========================
 # Install XL2TP & IPsec
+# Attention: modfiy /usr/lib/systemd/system/xl2tpd.service
+# Uncomment section:
+# Wants=ipsec.service
 # ========================
 sudo yum install -y libreswan xl2tpd ppp
 

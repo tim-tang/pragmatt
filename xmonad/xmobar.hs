@@ -4,7 +4,7 @@
 
 -- This is setup for dual 1920x1080 monitors, with the right monitor as primary
 Config {
-    font = "xft:gohufont:size=9.3:antialias=false",
+    font = "xft:gohufont:size=9.3:antialias=true",
     additionalFonts = ["xft:gohufont:size=9.4:antialias=true:oblique"],
     textOffset = -1,
     iconOffset = -1,

@@ -44,22 +44,8 @@ alias backupfromstick='sudo rsync -avxHAX --progress --exclude 't37LTS' /mnt/usb
 #       XRandr     
 # ------------------
 alias xr='xrandr'
-alias xr-mobile='xrandr -s 0'
-alias xr-home='xrandr --output DP1 --right-of eDP1 --auto'
-alias xr-office='xrandr --output HDMI1 --right-of eDP1 --auto'
-alias xr-beamer='xrandr --output HDMI1 --left-of eDP1 --auto'
-
-# Set dual monitors
-function dual(){
-    xrandr --output eDP1 --primary --left-of DP1 --output DP1 --auto
-}
-
-# Set exactly alike monitors
-function same(){
-    xrandr --output DP1 --auto
-}
-
-# Set single monitor
-function single(){
-    xrandr --output DP1 --off
-}
+alias xr-laptop='xrandr --output DP1 --off'
+alias xr-mirror='xrandr --output DP1 --auto --size 2560x1440'
+alias xr-home='xrandr --output eDP1 --left-of DP1 --auto --size 2560x1440'
+alias xr-office='xrandr --output eDP1 --right-of DP1 --auto --size 2560x1440'
+alias xr-dual='xrandr --output eDP1 --primary --left-of DP1 --output DP1 --auto'

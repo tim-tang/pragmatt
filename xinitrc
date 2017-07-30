@@ -19,7 +19,6 @@ export XMODIFIERS="@im=ibus"
 export QT_IM_MODULE=ibus
 export GTK_IM_MODULE=ibus
 ibus-daemon --xim -d
-#ibus engine libpinyin
 
 
 # Configure X
@@ -39,5 +38,8 @@ pulseaudio --start --log-target=syslog &
 
 # Start Firefox
 firefox &
+
+# Start WeChat
+wechat &
 
 exec xmonad

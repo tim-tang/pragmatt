@@ -58,7 +58,7 @@ myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:Code","2:Browser","3:Eclipse","4:Term","5:Cloud", "6:Media"] ++ map show [7..9]
+myWorkspaces = ["1:Code","2:Browser","3:Eclipse","4:Term","5:Chat", "6:Media"] ++ map show [7..9]
 
 
 ------------------------------------------------------------------------
@@ -80,10 +80,10 @@ myManageHook = composeAll
     , className =? "Google-chrome"  --> doShift "2:Browser"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Eclipse"        --> doShift "3:Eclipse"
-    , className =? "Steam"          --> doFloat
+    , className =? "electronic-wechat" --> doShift "5:Chat"
     , className =? "Gimp"           --> doFloat
     , title =? "mutt"               --> doShift "4:Term"
-    , title =? "irssi"               --> doShift "4:Term"
+    , title =? "irssi"               --> doShift "5:Chat"
     , className =? "mpv"            --> doShift "6:Media"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
@@ -329,7 +329,6 @@ myStartupHook = do
   spawn "xmodmap $HOME/.Xmodmap"
   spawn "xsetroot -cursor_name left_ptr" 
   spawn "feh --bg-fill $HOME/.xmonad/wallpaper/wl3.png"
-  spawn "xcompmgr -cfF -t-9 -l-11 -r9 -o.75 -D3 &"
   --setWMName "LG3D"
 
 

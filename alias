@@ -7,7 +7,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias igrep='grep -i --color=auto'
 alias grp='grep'
-alias diff='colordiff'
 alias cl='tr -s " " | cut -d " " -f $1'
 alias ll='ls -alh'
 alias ltr='ls -lhatr'
@@ -41,19 +40,13 @@ alias backuptostick='sudo rsync -avxHAX --progress --exclude 't37LTS' Projects /
 alias backupfromstick='sudo rsync -avxHAX --progress --exclude 't37LTS' /mnt/usb/projects /home/pragmatt/phab'
 
 
-# xrandr
-alias xr='xrandr'
-alias xr-mobile='xrandr -s 0'
-alias xr-home='xrandr --output DP1 --right-of eDP1 --auto'
-alias xr-office='xrandr --output HDMI1 --right-of eDP1 --auto'
-alias xr-beamer='xrandr --output HDMI1 --left-of eDP1 --auto'
-
 
 #funcs
-extract() { 
+function extract() { 
     if [ -f $1 ] ; then 
       case $1 in 
         *.tar.bz2)   tar xjf $1     ;; 
+        *.tar.xz)    tar xjf $1     ;; 
         *.tar.gz)    tar xzf $1     ;; 
         *.bz2)       bunzip2 $1     ;; 
         *.rar)       unrar e $1     ;; 
@@ -71,6 +64,14 @@ extract() {
      fi 
 }
 
+# ------------------
+#       XRandr     
+# ------------------
+alias xr='xrandr'
+alias xr-mobile='xrandr -s 0'
+alias xr-home='xrandr --output DP1 --right-of eDP1 --auto'
+alias xr-office='xrandr --output HDMI1 --right-of eDP1 --auto'
+alias xr-beamer='xrandr --output HDMI1 --left-of eDP1 --auto'
 
 # Set dual monitors
 function dual(){

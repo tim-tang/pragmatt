@@ -28,7 +28,8 @@ xrdb -merge ~/.Xresources&
 setxkbmap -option "ctrl:nocaps" &
 
 # Start a window compositor. This ensures Google Chrome paints correctly.
-xcompmgr -n &
+# xcompmgr -n &
+xcompmgr -cfF -t-9 -l-11 -r9 -o.75 -D3 &
 
 # Start the system tray
 # tray &

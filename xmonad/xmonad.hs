@@ -86,6 +86,7 @@ myManageHook = composeAll
     , title =? "mutt"               --> doShift "4:Cloud"
     , title =? "irssi"               --> doShift "3:Chat"
     , className =? "mpv"            --> doShift "6:Media"
+    , className =? "Vncviewer"      --> doShift "6:Media"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 

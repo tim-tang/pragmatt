@@ -22,7 +22,7 @@ echo "
 # -------------
 # Install Utils
 # -------------"
-sudo yum install -y curl doxygen graphviz htop mercurial psmisc screen s3cmd gdb ntp axel
+sudo yum install -y curl doxygen graphviz htop mercurial psmisc screen s3cmd gdb ntp axel tigervnc freedesktop
 
 echo "
 # ----------------

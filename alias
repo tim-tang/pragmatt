@@ -49,3 +49,14 @@ alias xr-mirror='xrandr --output DP1 --auto --size 2560x1440'
 alias xr-home='xrandr --output eDP1 --left-of DP1 --auto --size 2560x1440'
 alias xr-office='xrandr --output eDP1 --right-of DP1 --auto --size 2560x1440'
 alias xr-dual='xrandr --output eDP1 --primary --left-of DP1 --output DP1 --auto'
+
+
+# ------------------
+#       Rset VPN
+# ------------------
+function resetvpn() {
+   sc-restart ipsec
+   sc-restart xl2tpd
+   sleep 1
+   flowvpn flowam
+}

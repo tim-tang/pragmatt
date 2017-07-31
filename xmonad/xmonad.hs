@@ -49,6 +49,7 @@ myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
             "for pid in `pgrep mutt`; do kill -9 $pid; done && " ++
             "for pid in `pgrep google-chrome`; do kill -9 $pid; done && " ++
             "for pid in `pgrep firefox`; do kill -9 $pid; done && " ++
+            "for pid in `pgrep electronic-wechat`; do kill -9 $pid; done && " ++
             "xmonad --recompile && xmonad --restart"
 
 

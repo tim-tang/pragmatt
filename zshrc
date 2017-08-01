@@ -63,7 +63,7 @@ export EDITOR='vim'
 # export ARCHFLAGS="-arch x86_64"
 export MANPATH="/usr/local/man:$MANPATH"
 export PERL5LIB=$HOME/perl5:$HOME/perl5/lib/perl5
-export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$HOME/phab/virgo-build/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 export LD_LIBRARY_PATH=/home/pragmatt/phab/apus/build/lib:/lib:/lib/python:

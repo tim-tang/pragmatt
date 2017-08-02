@@ -10,10 +10,14 @@ then
     unset f
 fi
 
+
+
 # Configure PATH so that we can access our scripts below
 PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
 # Configure IBus
+# export TERM=rxvt-unicode-256color
+export TERM=rxvt-unicode
 export LANG=en_US.UTF-8
 export XMODIFIERS="@im=ibus"
 export QT_IM_MODULE=ibus

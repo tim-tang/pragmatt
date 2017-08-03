@@ -39,6 +39,11 @@ alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr 
 alias backuptostick='sudo rsync -avxHAX --progress --exclude 't37LTS' Projects /mnt/usb'
 alias backupfromstick='sudo rsync -avxHAX --progress --exclude 't37LTS' /mnt/usb/projects /home/pragmatt/phab'
 
+# ------------------
+#   Tune Backlight 
+# ------------------
+alias bright='light -s mba6x_backlight -A 20 '
+alias dark='light -s mba6x_backlight -U 20'
 
 # ------------------
 #       XRandr     
@@ -52,11 +57,14 @@ alias xr-dual='xrandr --output eDP1 --primary --left-of DP1 --output DP1 --auto'
 
 
 # ------------------
-#       Rset VPN
+#       Reset VPN
 # ------------------
 function resetvpn() {
+   switchvpn off
    sc-restart ipsec
    sc-restart xl2tpd
    sleep 1
-   flowvpn flowam
+   switchvpn on
 }
+
+

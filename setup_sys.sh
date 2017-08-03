@@ -35,8 +35,8 @@ echo "
 # -----------
 # Install X11
 # -----------"
-#sudo yum groupinstall -y "GNOME Desktop"
-sudo yum groupinstall -y base core dail-up fonts directory-client input-methods internet-browser java-platform guest-agents guest-desktop-agents multimedia network-file-system-client networkmanager-submodules
+sudo yum groupinstall -y "GNOME Desktop"
+#sudo yum groupinstall -y base core dail-up fonts directory-client input-methods internet-browser java-platform guest-agents guest-desktop-agents multimedia network-file-system-client networkmanager-submodules
 sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
 sudo systemctl set-default graphical.target
 
@@ -158,6 +158,7 @@ echo "
 # Wants=ipsec.service
 # ----------------------------------------------------------"
 sudo yum install -y libreswan xl2tpd ppp
+sudo ln -sf $PWD/switchvpn /usr/local/bin/switchvpn
 
 echo "
 # ----------------------

@@ -12,7 +12,18 @@ sudo modprobe wl
 sudo lsmod|grep wl
 
 # Fix Display backlight 
-sudo yum install kmod-mba6x_bl
+sudo yum install kmod-mba6x_bl-20161201.055d50d-1.el7
+sudo modprobe mba6x_bl
+
+# Install light
+sudo yum install -y help2man
+pushd
+git clone https://github.com/haikarainen/light.git /tmp/light
+cd /tmp/light
+sudo make 
+sudo make install
+popd
 
 # Fixing keyboard mapping
+# More: systemctl status mba-kbd-fix
 sudo yum install mba-kbd-fix

@@ -1,10 +1,11 @@
+## Macbook Air Fixes
+
+    $ ./mba-fix.sh
+
 ## Installation
 
     $ cd pragmatt && ./install.sh
 
-## Macbook Air Fixes
-
-    $ ./mba-fix.sh
 
 ## Config Wireless Hotpot
 
@@ -15,8 +16,14 @@
     $ dhclient <interface>
     $ ifconfig <interface> up/down
 
-> Don't forget to change password in .fetchmailrc
-
 ## Integrate Wechat with Irssi:
 
-please refer => https://github.com/sjdy521/Mojo-Weixin
+> please refer => https://github.com/sjdy521/Mojo-Weixin
+
+## SoftEther VPN server installation
+
+- https://www.softether.org/4-docs/1-manual
+- please refer => https://www.softether.org/4-docs/1-manual/7._Installing_SoftEther_VPN_Server/7.3_Install_on_Linux_and_Initial_Configurations
+- http://softether-download.com/en.aspx
+
+

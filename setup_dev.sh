@@ -22,7 +22,7 @@ echo "
 # -------------
 # Install Utils
 # -------------"
-sudo yum install -y curl doxygen graphviz htop mercurial psmisc screen s3cmd gdb ntp axel tigervnc freedesktop
+sudo yum install -y curl doxygen graphviz htop mercurial psmisc screen s3cmd gdb ntp axel tigervnc freedesktop, ansible
 
 echo "
 # ----------------
@@ -70,10 +70,15 @@ sudo yum remove -y --remove-leaves abrt-libs audit chrony dyninst* firewalld kex
 sudo systemctl stop gdm
 sudo systemctl stop lvm2-monitor
 sudo systemctl stop lvm2-lvmetad
+sudo systemctl stop firewalld
 sudo systemctl disable gdm
 sudo systemctl disable lvm2-monitor
 sudo systemctl disable lvm2-lvmetad
 sudo systemctl disable firewalld
 sudo yum remove -y selinux-policy
+sudo service iptables save
+sudo service iptables stop
+sudo chkconfig iptables off
+  
 
 echo "=>> Bingoo! orz orz orz ......"

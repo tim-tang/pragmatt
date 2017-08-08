@@ -14,7 +14,7 @@ function conn() {
     info "=>>> VPN connect " "✔"
     for i in $(seq 9); do 
         if ifconfig -s | grep ^ppp6; then 
-            sudo route add -net 10.0.0.0/14 ppp6 
+            sudo route add -net 10.0.0.0/14 ppp6
             info "=>>> VPN online  " "✔"
             exit 0 
         else 

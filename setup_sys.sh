@@ -108,6 +108,7 @@ echo "
 # --------------"
 ln -sf $PWD/motd $HOME/.motd
 ln -sf $PWD/alias $HOME/.alias
+ln -sf $PWD/inputrc $HOME/.inputrc
 
 echo "
 # ------------

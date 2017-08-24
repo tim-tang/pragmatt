@@ -59,7 +59,7 @@ myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:Code","2:Browser","3:Chat","4:Cloud","5:Eclipse", "6:Media"] ++ map show [7..9]
+myWorkspaces = ["1:Code","2:Browser","3:Chat","4:Cloud","5:Eclipse", "6:Irssi", "7:Media"] ++ map show [8..9]
 
 
 ------------------------------------------------------------------------
@@ -84,9 +84,9 @@ myManageHook = composeAll
     , className =? "electronic-wechat" --> doShift "3:Chat"
     , className =? "Gimp"           --> doFloat
     , title =? "mutt"               --> doShift "4:Cloud"
-    , title =? "irssi"               --> doShift "3:Chat"
-    , className =? "mpv"            --> doShift "6:Media"
-    , className =? "Vncviewer"      --> doShift "6:Media"
+    , title =? "irssi"               --> doShift "6:Irssi"
+    , className =? "mpv"            --> doShift "7:Media"
+    , className =? "Vncviewer"      --> doShift "7:Media"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 

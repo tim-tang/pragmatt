@@ -7,7 +7,7 @@ sudo wget -O /etc/yum.repos.d/rhel7-mba.repo https://s3.amazonaws.com/atodorov/r
 
 # Wireless driver
 sudo yum --showdup list kmod-wl
-sudo yum install kmod-wl-6.30.223.248-10.el7
+sudo yum install kmod-wl-6.30.223.248-12.el7
 sudo modprobe wl
 sudo lsmod|grep wl
 

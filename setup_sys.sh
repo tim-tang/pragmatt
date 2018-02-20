@@ -39,6 +39,7 @@ sudo yum groupinstall -y "GNOME Desktop"
 #sudo yum groupinstall -y base core dail-up fonts directory-client input-methods internet-browser java-platform guest-agents guest-desktop-agents multimedia network-file-system-client networkmanager-submodules
 sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
 sudo systemctl set-default graphical.target
+sudo systemctl disable gdm
 
 echo "
 # -----------
@@ -74,10 +75,10 @@ pushd $PWD
 rm -rf /tmp/xmobar
 git clone git://github.com/jaor/xmobar /tmp/xmobar
 cd /tmp/xmobar
-runhaskell Setup.lhs configure --flags="with_utf8"
-runhaskell Setup.lhs configure --flags="with_xft"
-runhaskell Setup.lhs build
-runhaskell Setup.lhs install
+sudo runhaskell setup.lhs configure --flags="with_utf8"
+sudo runhaskell setup.lhs configure --flags="with_xft"
+sudo runhaskell setup.lhs build
+sudo runhaskell setup.lhs install
 popd
 #cabal update
 #cabal install c2hs

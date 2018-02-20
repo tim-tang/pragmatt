@@ -30,7 +30,7 @@ ZSH_THEME="jonathan"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -54,6 +54,7 @@ plugins=(git extract rsync systemadmin systemd jsontools)
 ######################
 # User configuration #
 ######################
+export TZ='Asia/Shanghai'
 #export LANG=zh_CN.UTF-8
 export LANG=en_US.UTF-8
 
@@ -66,10 +67,26 @@ export PERL5LIB=$HOME/perl5:$HOME/perl5/lib/perl5
 export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$HOME/phab/virgo-build/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
-export LD_LIBRARY_PATH=/home/pragmatt/phab/apus/build/lib:/lib:/lib/python:
-export PYTHONPATH=/home/pragmatt/phab/virgo-build/lib/python:/home/pragmatt/phab/virgo/tools:/home/pragmatt/phab/aries/src/python:/home/pragmatt/phab/apus/build/lib/python:/home/pragmatt/phab/aquarius/aqua-facility/src/python
-export VIRGO_SRC_ROOT=/home/pragmatt/phab/virgo
-export VIRGO_LIB_ROOT=/home/pragmatt/phab/virgo-build
+#export LIBRARY_PATH=$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib
+#export LD_LIBRARY_PATH=$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib
+# export PYTHONPATH=$HOME/phab/virgo-build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python
+
+export PYTHONPATH=$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python
+
+
+export VIRGO_SRC_ROOT=$HOME/phab/virgo
+export VIRGO_LIB_ROOT=$HOME/phab/virgo-build
+
+export DRACO_SRC_ROOT=$HOME/phab/draco
+export DRACO_LIB_ROOT=$HOME/phab/draco/build
+#export DRACO_KVSERVER="0.0.0.0:9000"
+
+# --------------------------------
+#           Golang
+# --------------------------------
+export GOROOT=/usr/lib/golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -82,6 +99,16 @@ if [ ! -z "$TERM" ]; then
     source $HOME/.motd
 fi
 
-if [ -f ~/.alias ]; then
+if [ -f $HOME/.alias ]; then
     . $HOME/.alias
 fi
+
+if [ -f $HOME/.inputrc ]; then
+    . $HOME/.inputrc
+fi
+
+PATH="/home/pragmatt/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/pragmatt/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/pragmatt/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/pragmatt/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/pragmatt/perl5"; export PERL_MM_OPT;

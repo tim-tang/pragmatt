@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#set -ex
+
 GREEN='\033[32m'
 BROWN='\033[36m'
 NC='\033[0m'
@@ -10,25 +12,25 @@ function info() {
 
 function conn() {
     sudo ipsec auto --route flowam
-    sudo xl2tpd-control connect flowvpn
+    sudo xl2tpd-control connect flowam
     info "=>>> VPN connect " "✔"
     for i in $(seq 9); do 
-        if ifconfig -s | grep ^ppp6; then 
-            sudo route add -net 10.0.0.0/14 ppp6
-            info "=>>> VPN online  " "✔"
+        if ifconfig -s | grep ^ppp0; then 
+            sudo route add -net 10.0.0.0/14 ppp0
+            info "=>>> VPN flowam online  " "✔"
             exit 0 
         else 
             sleep 1 
             echo -ne "$i.."
         fi 
     done 
-    info " VPN (via ppp6) not up yet" "✖"
+    info " VPN flowam not up yet" "✖"
 }
 
 
 function disc() {
-    sudo xl2tpd-control disconnect flowvpn
-    info "=>>> VPN offline " "✔"
+    sudo xl2tpd-control disconnect flowam
+    info "=>>> VPN flowam offline " "✔"
 }
 
 

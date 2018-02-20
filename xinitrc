@@ -15,6 +15,9 @@ fi
 # Configure PATH so that we can access our scripts below
 PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
+# Configure Timezone:w
+export TZ='Asia/Shanghai'
+
 # Configure IBus
 # export TERM=rxvt-unicode-256color
 export TERM=rxvt-unicode
@@ -41,7 +44,8 @@ xcompmgr -cfF -t-9 -l-11 -r9 -o.75 -D3 &
 pulseaudio --start --log-target=syslog &
 
 # Start Firefox
-firefox &
+# firefox &
+google-chrome &
 
 # Start WeChat
 wechat &

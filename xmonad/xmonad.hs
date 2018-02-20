@@ -48,7 +48,7 @@ myswitch = "xswitch"
 myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
             "for pid in `pgrep mutt`; do kill -9 $pid; done && " ++
             "for pid in `pgrep google-chrome`; do kill -9 $pid; done && " ++
-            "for pid in `pgrep firefox`; do kill -9 $pid; done && " ++
+            "for pid in `pgrep google-chrome`; do kill -9 $pid; done && " ++
             "for pid in `pgrep electronic-wechat`; do kill -9 $pid; done && " ++
             "xmonad --recompile && xmonad --restart"
 
@@ -59,7 +59,7 @@ myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:Code","2:Browser","3:Chat","4:Cloud","5:Eclipse", "6:Irssi", "7:Media"] ++ map show [8..9]
+myWorkspaces = ["1:Code","2:Cloud","3:COLO","4:Browser","5:Chat","6:Irssi", "7:Media", "8:IDE"] ++ map show [9..10]
 
 
 ------------------------------------------------------------------------
@@ -77,13 +77,14 @@ myWorkspaces = ["1:Code","2:Browser","3:Chat","4:Cloud","5:Eclipse", "6:Irssi", 
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Firefox"       --> doShift "2:Browser"
-    , className =? "Google-chrome"  --> doShift "2:Browser"
+    [ className =? "Firefox"       --> doShift "4:Browser"
+    , className =? "Google-chrome"  --> doShift "4:Browser"
     , resource  =? "desktop_window" --> doIgnore
-    , className =? "Eclipse"        --> doShift "5:Eclipse"
-    , className =? "electronic-wechat" --> doShift "3:Chat"
+    , className =? "Eclipse"        --> doShift "8:IDE"
+    , className =? "Clion"        --> doShift "8:IDE"
+    , className =? "electronic-wechat" --> doShift "5:Chat"
     , className =? "Gimp"           --> doFloat
-    , title =? "mutt"               --> doShift "4:Cloud"
+    , title =? "mutt"               --> doShift "2:Cloud"
     , title =? "irssi"               --> doShift "6:Irssi"
     , className =? "mpv"            --> doShift "7:Media"
     , className =? "Vncviewer"      --> doShift "7:Media"
@@ -331,7 +332,7 @@ myStartupHook = do
   spawn "xmodmap $HOME/.Xmodmap"
   spawn "xsetroot -cursor_name left_ptr" 
   spawn "feh --bg-fill $HOME/.xmonad/wallpaper/wl3.png"
-  --setWMName "LG3D"
+  setWMName "LG3D"
 
 
 ------------------------------------------------------------------------

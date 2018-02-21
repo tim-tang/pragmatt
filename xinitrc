@@ -15,7 +15,7 @@ fi
 # Configure PATH so that we can access our scripts below
 PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
-# Configure Timezone:w
+# Configure Timezone
 export TZ='Asia/Shanghai'
 
 # Configure IBus

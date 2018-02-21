@@ -5,7 +5,7 @@ echo "
 # Install Dev Deps
 # -----------------"
 mkdir -p $HOME/bin
-sudo yum install -y atlas-devel boost-devel clang cmake gcc-c++ git gtest-devel java-1.8.0-openjdk-devel lapack-devel libevent-devel meld numpy python-devel python-ipython-console python-unittest2 pytz scipy swig thrift-devel xz-devel strace valgrind mysql-devel MySQL-python maven thrift python-thrift aerospike-client-c-devel ipython
+sudo yum install -y atlas-devel boost boost-devel clang cmake gcc-c++ git gtest-devel java-1.8.0-openjdk-devel lapack-devel libevent-devel meld numpy python-devel python-ipython-console python-unittest2 pytz scipy swig xz-devel strace valgrind mysql-devel MySQL-python maven thrift-0.10.0 python-thrift aerospike-client-c-devel ipython3 python34-devel python3-thrift python34-numpy
 
 echo "
 # --------------

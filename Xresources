@@ -22,7 +22,7 @@ URxvt*geometry:                                 80x25
 URxvt*borderLess:                               false
 URxvt*scrollBar:                                false
 URxvt*cursorBlink:                              true
-URxvt*cursorUnderline:                          true
+URxvt*cursorUnderline:                          false
 URxvt*scrollColor:                              #151515
 URxvt*perl-ext-common:                          default,clipboard,url-select,keyboard-select,vtwheel
 URxvt*font:                                     xft:gohufont:hinting=true:pixelsize=12.4:antialias=true,xft:WenQuanYi Micro Hei Mono:regular:size=13:minspace=true:antialias=true

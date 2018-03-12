@@ -43,27 +43,19 @@ alias backupfromstick='sudo rsync -avxHAX --progress --exclude 't37LTS' /mnt/usb
 #       XRandr     
 # ------------------
 alias xr='xrandr'
-alias xr-laptop='xrandr --output HDMI-1 --off'
-alias xr-home='xrandr --output eDP1 --left-of HDMI-1 --auto --size 2560x1440'
-alias xr-office='xrandr --output eDP1 --right-of HDMI-1 --auto --size 2560x1440'
-alias xr-dual='xrandr --output eDP1 --primary --left-of DP1 --output HDMI-1 --auto'
+alias xr-laptop='xrandr --output DP-1-1 --off'
+alias xr-home='xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440'
+#alias xr-office='xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440'
+#alias xr-dual='xrandr --output eDP-1 --primary --left-of DP-1-1 --output HDMI-1 --auto'
 
 function xr-mirror() {
     xr-laptop
-    xrandr --output HDMI-1 --auto --size 2560x1440
+    xrandr --output DP-1-1 --auto --size 2560x1440
 }
 
-function start-mirror() {
-    ln -sf $HOME/playground/pragmatt/Xresources_mirror $HOME/.Xresources
-    ln -sf $HOME/playground/pragmatt/xmonad/xmobar_mirror.hs $HOME/.xmonad/xmobar.hs
-    startx
-}
-
-function start-laptop() {
-    ln -sf $HOME/playground/pragmatt/Xresources $HOME/.Xresources
-    ln -sf $HOME/playground/pragmatt/xmonad/xmobar.hs  $HOME/.xmonad/xmobar.hs
-    xrandr --output HDMI-1 --off
-    startx
+function xr-home() {
+    xr-laptop
+    xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440
 }
 
 
@@ -71,13 +63,13 @@ function start-laptop() {
 #    Reset VPN
 # ------------------
 function vpnon() {
-   switchvpn off
+   switchvpn off "${1}"
    sleep 2
-   switchvpn on
+   switchvpn "${1}"
 }
 
 function vpnoff() {
-   switchvpn off
+   switchvpn off "${1}"
 }
 
 # ------------------

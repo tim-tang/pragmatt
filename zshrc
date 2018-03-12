@@ -67,11 +67,11 @@ export PERL5LIB=$HOME/perl5:$HOME/perl5/lib/perl5
 export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$HOME/phab/virgo-build/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
-#export LIBRARY_PATH=$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib
-#export LD_LIBRARY_PATH=$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib
-# export PYTHONPATH=$HOME/phab/virgo-build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python
+export LIBRARY_PATH=$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib
+export LD_LIBRARY_PATH=$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib
+export PYTHONPATH=$HOME/phab/virgo-build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python
 
-export PYTHONPATH=$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python
+#export PYTHONPATH=$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python
 
 
 export VIRGO_SRC_ROOT=$HOME/phab/virgo

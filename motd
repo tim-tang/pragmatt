@@ -12,7 +12,7 @@
 GREEN='\033[1;32m'
 BROWN='\033[0;36m'
 NC='\033[0m'
-ROOT=`df -Ph | grep '/dev/sda6' | awk '{print $4}' | tr -d '\n'`
+ROOT=`df -Ph | grep 'centos-root' | awk '{print $4}' | tr -d '\n'`
 
 MEMORY1=`free -t -m | grep "Mem" | awk '{print $6" MB";}'`
 MEMORY2=`free -t -m | grep "Mem" | awk '{print $2" MB";}'`

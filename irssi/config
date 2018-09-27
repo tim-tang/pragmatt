@@ -36,23 +36,10 @@ chatnets = {
 channels = (
   { name = "#archlinux-cn"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#linuxba"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#ustclug"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#ansible"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#tuna"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#smartos"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#Project-FiFo"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#我的好友"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#善流:全体"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#善流:运维"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#善流:交易系统"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#善流:数据服务"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#善流:分析与可视化"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#善流:学习园地"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#善流:托管"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#善流:饭团"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#瞎聊聊"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#南大2016级软件工程硕士（苏州)"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#纯同学群-2016"; chatnet = "wechat"; autojoin = "yes"; },
-  { name = "#赵氏一家红包群"; chatnet = "wechat"; autojoin = "yes"; }
+  { name = "#Project-FiFo"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -326,7 +313,7 @@ ignores = (
       "#tuna",
       "#archlinux-cn",
       "#linuxba",
-      "#ustclug"
+      "#ansible"
     );
   }
 );

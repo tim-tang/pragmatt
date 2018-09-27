@@ -71,6 +71,7 @@ echo "
 # --------------
 # Install Xmobar
 # --------------"
+<<<<<<< HEAD
 pushd $PWD
 rm -rf /tmp/xmobar
 git clone git://github.com/jaor/xmobar /tmp/xmobar
@@ -151,7 +152,6 @@ pushd $PWD
 cd $HOME/.vim && ./install.sh
 popd
 
-
 echo "
 # ----------------------------------------------------------
 # Install XL2TP & IPsec
@@ -173,7 +173,7 @@ echo "
 # ---------------------
 # Install Google Chrome
 # ---------------------"
-sudo bash -c 'cat > /etc/yum.repos.d/google-chrome.repo <<EOF 
+sudo bash -c 'cat > /etc/yum.repos.d/google-chrome.repo <<EOF
 [google-chrome]
 name=google-chrome
 baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
@@ -189,8 +189,8 @@ echo "
 # -----------"
 sudo yum install -y libXt-devel imlib2-devel libcurl-devel libpng-devel libX11 libXinerama
 pushd $PWD
-rm -rf $HOME/playground/feh
-git clone https://github.com/derf/feh.git $HOME/playground/feh
+#rm -rf $HOME/playground/feh
+#git clone https://github.com/derf/feh.git $HOME/playground/feh
 cd $HOME/playground/feh
 make
 sudo make install app=1
@@ -206,8 +206,8 @@ pushd $PWD
 rm -rf $HOME/playground/xcompmgr
 git clone https://anongit.freedesktop.org/git/xorg/app/xcompmgr.git $HOME/playground/xcompmgr
 cd $HOME/playground/xcompmgr
-./autogen.sh 
-make 
+./autogen.sh
+make
 sudo make install
 popd
 

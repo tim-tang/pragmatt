@@ -42,6 +42,10 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="mm/dd/yyyy"
 
+
+bindkey "^p" up-line-or-beginning-search
+bindkey "^n" down-line-or-beginning-search
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -67,11 +71,12 @@ export PERL5LIB=$HOME/perl5:$HOME/perl5/lib/perl5
 export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$HOME/phab/virgo-build/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
-export LIBRARY_PATH=$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib
-export LD_LIBRARY_PATH=$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib
-export PYTHONPATH=$HOME/phab/virgo-build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python
+#export LIBRARY_PATH=$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/phab/virgo-build/lib:$HOME/phab/apus/build/lib:$HOME/phab/pumpman/build/lib
+export LD_LIBRARY_PATH=$HOME/phab/apus/build/lib:$HOME/phab/virgo-build/lib:$HOME/phab/virgo-build/lib/python:$HOME/wind/tdb_CentOS_C++_v3_20161219/demo
 
-#export PYTHONPATH=$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python
+export PYTHONPATH=$HOME/phab/virgo-build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/apus/build/lib/python:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python:$HOME/phab/pisces/flowrun/src/python
+>>>>>>> update cfg
 
 
 export VIRGO_SRC_ROOT=$HOME/phab/virgo
@@ -81,6 +86,14 @@ export DRACO_SRC_ROOT=$HOME/phab/draco
 export DRACO_LIB_ROOT=$HOME/phab/draco/build
 #export DRACO_KVSERVER="0.0.0.0:9000"
 
+<<<<<<< HEAD
+=======
+# ---------------
+#  Apus
+# ---------------
+export MEMOIZE_MAP=/data/apus=/home/pragmatt/data
+
+>>>>>>> update cfg
 # --------------------------------
 #           Golang
 # --------------------------------

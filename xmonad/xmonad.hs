@@ -41,7 +41,7 @@ myScreenshot = "fshot"
 
 -- The command to run dmenu.
 -- mydmenu = "dmenu_run -f -nb black -fn 'ProFontWindows-9.3'"
-mydmenu = "dmenu_run -f -nb black -fn 'gohufont-9.3'"
+mydmenu = "dmenu_run -f -nb black -fn 'gohufont-10'"
 
 myswitch = "xswitch"
 
@@ -126,7 +126,7 @@ tabConfig = defaultTheme {
     inactiveBorderColor = "#7C7C7C",
     inactiveTextColor = "#EEEEEE",
     inactiveColor = "#000000",
-    fontName = "xft:gohufont:size=9.3:antialias=False"
+    fontName = "xft:gohufont:size=10:antialias=False"
 }
 
 -- Color of current window title in xmobar.

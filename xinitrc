@@ -45,6 +45,7 @@ pulseaudio --start --log-target=syslog &
 
 # Start Firefox
 # firefox &
+# Start Goole Chrome
 google-chrome &
 
 # Start WeChat

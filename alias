@@ -40,11 +40,12 @@ alias backuptostick='sudo rsync -avxHAX --progress --exclude 't37LTS' Projects /
 alias backupfromstick='sudo rsync -avxHAX --progress --exclude 't37LTS' /mnt/usb/projects /home/pragmatt/phab'
 
 # ------------------
-#       XRandr     
+#       XRandr
 # ------------------
 alias xr='xrandr'
-alias xr-laptop='xrandr --output DP-1-1 --off'
-alias xr-home='xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440'
+alias xr-laptop='xrandr --output DP-2-1 --off'
+alias xr-home='xrandr --output eDP-1 --right-of DP-2-1 --auto --size 2560x1440'
+>>>>>>> update cfg
 #alias xr-office='xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440'
 #alias xr-dual='xrandr --output eDP-1 --primary --left-of DP-1-1 --output HDMI-1 --auto'
 
@@ -85,6 +86,6 @@ print(chrono.time_to_str("$1"))
 function totime() {
     python3 -c "
 from quant import chrono
-print(chrono.str_to_time("$1"))
+print(chrono.str_to_time_ns("$1"))
 "
 }

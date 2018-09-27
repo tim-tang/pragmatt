@@ -1,6 +1,6 @@
 [user]
     name = tangjilong
-    email = tang.jilong@flowam.com
+    email = tangjilong@flowam.com
 [apply]
     # Detect whitespace errors when applying a patch
     whitespace = fix
@@ -39,6 +39,8 @@
 [url "https://github.com/"]
 	insteadOf = git://github.com/
 [github]
-	user = tim-tang
+	user = tangjilong
 [http]
 	postBuffer = 157286400
+[core]
+	quotepath = false

@@ -9,7 +9,7 @@ Xft.hintstyle:                                  hintslight
 
 
 URxvt.perl-ext-common:  default,matcher
-URxvt.url-launcher:     /bin/firefox
+URxvt.url-launcher:      /bin/firefox
 URxvt.matcher.button:   1
 
 URxvt.depth: 32
@@ -23,18 +23,18 @@ URxvt*geometry:                                 80x60
 URxvt*borderLess:                               false
 URxvt*scrollBar:                                false
 URxvt*cursorBlink:                              true
-URxvt*cursorUnderline:                          true
+URxvt*cursorUnderline:                          false
 URxvt*scrollColor:                              #151515
 URxvt*perl-ext-common:                          default,clipboard,url-select,keyboard-select,vtwheel
-!URxvt*font:                                     xft:gohufont:hinting=true:pixelsize=12.4:antialias=true,xft:WenQuanYi Micro Hei Mono:regular:size=12.4:minspace=true:antialias=true
-!URxvt*boldFont:                                 xft:gohufont:hinting=true:pixelsize=12.4:antialias=true
+!URxvt*font:                                     xft:gohufont:hinting=true:pixelsize=12:antialias=true,xft:WenQuanYi Micro Hei Mono:regular:size=12:minspace=true:antialias=true
+!URxvt*boldFont:                                 xft:gohufont:hinting=true:pixelsize=12:antialias=true
 !URxvt*italicFont:                               xft:gohufont:style=italic:hinting=true:pixelsize=12:antialias=true
 !URxvt*boldItalicFont:                           xft:gohufont:style=bolditalic:hinting=true:pixelsize=12:antialias=true
 URxvt*letterSpace:                              1
-URxvt*font:                                     xft:ProFontWindows:hinting=true:pixelsize=16.2:antialias=true,xft:WenQuanYi Micro Hei Mono:regular:size=13.4:minspace=true:antialias=true
-URxvt*boldFont:                                 xft:ProFontWindows:hinting=true:pixelsize=16.2:antialias=true
-URxvt*italicFont:                               xft:ProFontWindows:style=italic:hinting=true:pixelsize=16.4:antialias=true
-URxvt*boldItalicFont:                           xft:ProFontWindows:style=bolditalic:hinting=true:pixelsize=16.4:antialias=true
+URxvt*font:                                     xft:ProFontWindows:hinting=true:pixelsize=12:antialias=true,xft:WenQuanYi Micro Hei Mono:regular:size=12.4:minspace=true:antialias=true
+URxvt*boldFont:                                 xft:ProFontWindows:hinting=true:pixelsize=12:antialias=true
+URxvt*italicFont:                               xft:ProFontWindows:style=italic:hinting=true:pixelsize=12:antialias=true
+URxvt*boldItalicFont:                           xft:ProFontWindows:style=bolditalic:hinting=true:pixelsize=12:antialias=true
 URxvt.underlineURLs:                            true
 URxvt.url-select.launcher:                      /bin/google-chrome
 URxvt.url-select.underline:                     true
@@ -43,7 +43,7 @@ URxvt*keysym.End: \033[4~
 !------------------------------------------------------------------------------
 ! URxvt Colors
 
-*cursorColor:                         #ffffff
+*cursorColor:                         #6d715e
 *VT100.colorBDMode:                   true
 *VT100.colorULMode:                   true
 *VT100.colorUL:                       magenta

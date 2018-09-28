@@ -76,7 +76,6 @@ source $ZSH/oh-my-zsh.sh
 export LD_LIBRARY_PATH=$HOME/phab/apus/build/lib:$HOME/phab/virgo-build/lib:$HOME/phab/virgo-build/lib/python:$HOME/wind/tdb_CentOS_C++_v3_20161219/demo
 
 export PYTHONPATH=$HOME/phab/virgo-build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/apus/build/lib/python:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/aquarius/aqua-thrift/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python:$HOME/phab/pisces/flowrun/src/python
->>>>>>> update cfg
 
 
 export VIRGO_SRC_ROOT=$HOME/phab/virgo
@@ -86,14 +85,7 @@ export DRACO_SRC_ROOT=$HOME/phab/draco
 export DRACO_LIB_ROOT=$HOME/phab/draco/build
 #export DRACO_KVSERVER="0.0.0.0:9000"
 
-<<<<<<< HEAD
-=======
-# ---------------
-#  Apus
-# ---------------
-export MEMOIZE_MAP=/data/apus=/home/pragmatt/data
 
->>>>>>> update cfg
 # --------------------------------
 #           Golang
 # --------------------------------

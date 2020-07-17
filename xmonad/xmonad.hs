@@ -47,7 +47,7 @@ myswitch = "xswitch"
 
 myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
             "for pid in `pgrep mutt`; do kill -9 $pid; done && " ++
-            "for pid in `pgrep google-chrome`; do kill -9 $pid; done && " ++
+            "for pid in `pgrep firefox`; do kill -9 $pid; done && " ++
             "for pid in `pgrep google-chrome`; do kill -9 $pid; done && " ++
             "for pid in `pgrep electronic-wechat`; do kill -9 $pid; done && " ++
             "xmonad --recompile && xmonad --restart"
@@ -59,7 +59,7 @@ myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:Code","2:Cloud","3:COLO","4:Browser","5:Chat","6:Irssi", "7:Media", "8:IDE"] ++ map show [9..10]
+myWorkspaces = ["1:XDev","2:Cloud","3:Colo","4:Monitor","5:Chat","6:Irssi", "7:Media", "8:IDE", "9:Browser"] ++ map show [9..10]
 
 
 ------------------------------------------------------------------------
@@ -77,14 +77,14 @@ myWorkspaces = ["1:Code","2:Cloud","3:COLO","4:Browser","5:Chat","6:Irssi", "7:M
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Firefox"       --> doShift "4:Browser"
-    , className =? "Google-chrome"  --> doShift "4:Browser"
+    [ className =? "Firefox"       --> doShift "9:Browser"
+    , className =? "Google-chrome"  --> doShift "9:Browser"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Eclipse"        --> doShift "8:IDE"
     , className =? "Clion"        --> doShift "8:IDE"
     , className =? "electronic-wechat" --> doShift "5:Chat"
     , className =? "Gimp"           --> doFloat
-    , title =? "mutt"               --> doShift "2:Cloud"
+    , title =? "mutt"               --> doShift "7:Media"
     , title =? "irssi"               --> doShift "6:Irssi"
     , className =? "mpv"            --> doShift "7:Media"
     , className =? "Vncviewer"      --> doShift "7:Media"
@@ -173,7 +173,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "$HOME/.xmonad/bin/fshot")
 
   -- Pop-up dmenu.
-  --, ((modMask .|. shiftMask, xK_o),
   , ((modMask, xK_o),
      spawn mydmenu)
 

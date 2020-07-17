@@ -44,7 +44,7 @@ alias backupfromstick='sudo rsync -avxHAX --progress --exclude 't37LTS' /mnt/usb
 # ------------------
 alias xr='xrandr'
 alias xr-laptop='xrandr --output DP-2-1 --off'
-alias xr-home='xrandr --output eDP-1 --right-of DP-2-1 --auto --size 2560x1440'
+alias xr-home='xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440'
 #alias xr-office='xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440'
 #alias xr-dual='xrandr --output eDP-1 --primary --left-of DP-1-1 --output HDMI-1 --auto'
 
@@ -55,7 +55,7 @@ function xr-mirror() {
 
 function xr-home() {
     xr-laptop
-    xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440
+    xrandr --output eDP-1 --right-of DP-2-1 --auto --size 2560x1440
 }
 
 

@@ -11,7 +11,6 @@ then
 fi
 
 
-
 # Configure PATH so that we can access our scripts below
 PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 

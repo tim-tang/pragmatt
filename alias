@@ -35,6 +35,9 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo" 
 
+# global vpn.
+alias vpnso="echo 0bb04e584 | sudo openconnect --user=flowam --interface=world a01.any00.com:1443"
+
 #backup
 alias backuptostick='sudo rsync -avxHAX --progress --exclude 't37LTS' Projects /mnt/usb'
 alias backupfromstick='sudo rsync -avxHAX --progress --exclude 't37LTS' /mnt/usb/projects /home/pragmatt/phab'

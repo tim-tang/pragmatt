@@ -89,12 +89,7 @@ export DRACO_LIB_ROOT=$HOME/phab/draco/build
 export STRATRUN_WS=$HOME/stratrun
 
 
-# --------------------------------
-#           Golang
-# --------------------------------
-export GOROOT=/usr/lib/golang
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/opt/sge/bin:/opt/sge/bin/lx-amd64
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

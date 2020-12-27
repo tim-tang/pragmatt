@@ -48,8 +48,12 @@ alias backupfromstick='sudo rsync -avxHAX --progress --exclude 't37LTS' /mnt/usb
 alias xr='xrandr'
 alias xr-laptop='xrandr --output DP-2-1 --off'
 alias xr-home='xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440'
+alias xr-verical='xrandr --output DP-1-1 --rotate right --size 2560x1440'
 #alias xr-office='xrandr --output eDP-1 --right-of DP-1-1 --auto --size 2560x1440'
 #alias xr-dual='xrandr --output eDP-1 --primary --left-of DP-1-1 --output HDMI-1 --auto'
+
+alias svirgo='for i in $(git diff --cached --name-only); do rsync -avRzi $i dev03:~/phab/virgo; done'
+alias sdraco='for i in $(git diff --cached --name-only); do rsync -avRzi $i dev03:~/phab/draco; done'
 
 function xr-mirror() {
     xr-laptop

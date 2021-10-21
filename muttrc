@@ -2,6 +2,8 @@
 
 # Change the following six lines to match your Gmail account details
 #need to modify
+set sendmail="/usr/bin/msmtp"
+set spoolfile = "/var/spool/mail/flowam"
 set from = "tangjilong@flowam.com"
 set realname = "tangjilong"
 
@@ -49,9 +51,9 @@ bind editor <space> noop
 
 # APPEARANCE
 set date_format = "%a %d %b" # formats as strftime
-set index_format="[%Z] %-20.20F (%M) %s %* %D" # %* justifies right w priority
+set index_format="[%Z] %{%Y %b %e  %H:%M} %?X?(%X)&   ? %-22.22F  %.100s %> %5c "
 # COLORSCHEME
-source $HOME/.mutt/mutt-colors-solarized-dark-16.muttrc
+source $HOME/.mutt/mutt-colors-solarized-dark-256.muttrc
 
 # INDEX KEY BINDINGS
 bind index gg first-entry

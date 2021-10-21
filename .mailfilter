@@ -1,0 +1,3 @@
+HOME=/home/pragmatt
+DEFAULT=/var/spool/mail/flowam
+logfile "$HOME/.maillog"

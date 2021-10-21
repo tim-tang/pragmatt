@@ -77,15 +77,14 @@ myWorkspaces = ["1:XDev","2:Cloud","3:Colo","4:Monitor","5:Chat","6:Irssi", "7:M
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Firefox"       --> doShift "9:Browser"
+    [ className =? "Firefox"       --> doShift "6:Irssi"
     , className =? "Google-chrome"  --> doShift "9:Browser"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Eclipse"        --> doShift "8:IDE"
     , className =? "Code"           --> doShift "8:IDE"
     , className =? "electronic-wechat" --> doShift "5:Chat"
     , className =? "Gimp"           --> doFloat
-    , title =? "mutt"               --> doShift "7:Media"
-    , title =? "irssi"               --> doShift "6:Irssi"
+    , title =? "Mutt"               --> doShift "6:Mail"
     , className =? "mpv"            --> doShift "7:Media"
     , className =? "Vncviewer"      --> doShift "7:Media"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]

@@ -71,13 +71,13 @@ export PERL5LIB=$HOME/perl5:$HOME/perl5/lib/perl5
 export PATH="$HOME/.xmonad/bin:/bin:/usr/sbin:/sbin:$HOME/phab/virgo/build/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
-export C_INCLUDE_PATH=$HOME/playground/QuantLib-1.18
-export CPLUS_INCLUDE_PATH=$HOME/playground/QuantLib-1.18
+#export C_INCLUDE_PATH=$HOME/playground/QuantLib-1.18
+#export CPLUS_INCLUDE_PATH=$HOME/playground/QuantLib-1.18
 #export LIBRARY_PATH=$HOME/phab/virgo/build/lib:$HOME/phab/apus/build/lib
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/phab/virgo/build/lib:$HOME/phab/apus/build/lib:$HOME/phab/pumpman/build/lib
-export LD_LIBRARY_PATH=$HOME/phab/apus/build/lib:$HOME/phab/virgo/build/lib:$HOME/phab/virgo/build/lib/python:$HOME/playground/QuantLib-1.18/build/ql
+export LD_LIBRARY_PATH=$HOME/phab/apus/build/lib:$HOME/phab/virgo/build/lib:$HOME/phab/virgo/build/lib/python:$HOME/phab/pumpman/build/lib
 
-export PYTHONPATH=$HOME/phab/virgo/build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/apus/build/lib/python:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/gemini/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python:$HOME/phab/pisces/flowrun/src/python:$HOME/phab/pisces/stratrun/src/python:$HOME/phab/cetus/src/python:$HOME/phab/crux:$HOME/phab/libra/src/python:$HOME/phab/taurus/src/python
+export PYTHONPATH=$HOME/phab/virgo/build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/apus/build/lib/python:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/gemini/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python:$HOME/phab/pisces/flowrun/src/python:$HOME/phab/pisces/stratrun/src/python:$HOME/phab/cetus/src/python:$HOME/phab/crux:$HOME/phab/libra/src/python:$HOME/phab/taurus/src/python:$HOME/phab/grus/src/python
 
 
 export VIRGO_SRC_ROOT=$HOME/phab/virgo
@@ -85,8 +85,10 @@ export VIRGO_LIB_ROOT=$HOME/phab/virgo/build
 
 export DRACO_SRC_ROOT=$HOME/phab/draco
 export DRACO_LIB_ROOT=$HOME/phab/draco/build
-#export DRACO_KVSERVER="0.0.0.0:9000"
+#export DRACO_KVSERVER="draco-dev:9000"
+export DRACO_METASERVER="metalb:9000"
 export STRATRUN_WS=$HOME/stratrun
+#export BOOST_ROOT=$HOME/playground/boost_1_68_0
 
 
 export PATH=$PATH:/opt/sge/bin:/opt/sge/bin/lx-amd64

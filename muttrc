@@ -29,6 +29,8 @@ set postponed=/var/spool/mail/draft
 mailboxes = flowam
 mailboxes = sent
 
+set pager_index_lines = 46
+set pager_context = 3
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
@@ -53,12 +55,14 @@ bind editor <space> noop
 set date_format = "%a %d %b" # formats as strftime
 set index_format="[%Z] %{%Y %b %e  %H:%M} %?X?(%X)&   ? %-22.22F  %.100s %> %5c "
 # COLORSCHEME
-source $HOME/.mutt/mutt-colors-solarized-dark-256.muttrc
+#source $HOME/.mutt/mutt-colors-solarized-dark-256.muttrc
+source $HOME/.mutt/dracula.muttrc
 
 # INDEX KEY BINDINGS
 bind index gg first-entry
 bind index G  last-entry
 bind index R group-reply
+bind index . collapse-thread
 
 # PAGER
 bind pager k previous-line
@@ -72,10 +76,14 @@ bind attach <return> view-mailcap
 
 # THREADING
 set sort=threads
+set strict_threads=yes
+#set sort_browser="reverse-date"
+#set sort_aux="last-date-received"
 set sort_browser=date
 set sort_aux=reverse-last-date-received
 set uncollapse_jump
-unset collapse_unread
+set collapse_unread = yes
+#unset collapse_unread
 # auto collapse threads
 folder-hook . "exec collapse-all"
 

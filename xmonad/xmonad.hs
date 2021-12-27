@@ -59,7 +59,7 @@ myRestart = "for pid in `pgrep irssi`; do kill -9 $pid; done && " ++
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:XDev","2:Cloud","3:Colo","4:Monitor","5:Chat","6:Irssi", "7:Media", "8:IDE", "9:Browser"] ++ map show [9..10]
+myWorkspaces = ["1:XDev","2:Cloud","3:Colo","4:Monitor","5:Chat","6:Mail", "7:Media", "8:IDE", "9:Browser"] ++ map show [9..10]
 
 
 ------------------------------------------------------------------------
@@ -77,7 +77,7 @@ myWorkspaces = ["1:XDev","2:Cloud","3:Colo","4:Monitor","5:Chat","6:Irssi", "7:M
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Firefox"       --> doShift "6:Irssi"
+    [ className =? "Firefox"       --> doShift "9:Browser"
     , className =? "Google-chrome"  --> doShift "9:Browser"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Eclipse"        --> doShift "8:IDE"

@@ -27,17 +27,17 @@ URxvt*cursorUnderline:                          true
 URxvt*scrollColor:                              #151515
 URxvt*perl-ext-common:                          default,clipboard,url-select,keyboard-select,vtwheel
 
+URxvt*font:                                     xft:Monaco:hinting=true:pixelsize=11.6:antialias=false,xft:WenQuanYi Micro Hei Mono:regular:size=11:minspace=true:antialias=false
+URxvt*boldFont:                                 xft:Monaco:hinting=true:pixelsize=11.6:antialias=false
+URxvt*italicFont:                               xft:Monaco:style=italic:hinting=true:pixelsize=11.6:antialias=false
+URxvt*boldItalicFont:                           xft:Monaco:style=bolditalic:hinting=true:pixelsize=11.6:antialias=false
+
 !URxvt*font:                                     xft:gohufont:hinting=true:pixelsize=16.4:antialias=true,xft:WenQuanYi Micro Hei Mono:regular:size=16.4:minspace=true:antialias=true
 !URxvt*boldFont:                                 xft:gohufont:hinting=true:pixelsize=16.4:antialias=true
 !URxvt*italicFont:                               xft:gohufont:style=italic:hinting=true:pixelsize=16.4:antialias=true
 !URxvt*boldItalicFont:                           xft:gohufont:style=bolditalic:hinting=true:pixelsize=16.4:antialias=true
 
-URxvt*font:                                     xft:gohufont:hinting=true:pixelsize=16.4:antialias=true,xft:WenQuanYi Micro Hei Mono:regular:size=16.4:minspace=true:antialias=true
-URxvt*boldFont:                                 xft:gohufont:hinting=true:pixelsize=16.4:antialias=true
-URxvt*italicFont:                               xft:gohufont:style=italic:hinting=true:pixelsize=16.4:antialias=true
-URxvt*boldItalicFont:                           xft:gohufont:style=bolditalic:hinting=true:pixelsize=16.4:antialias=true
-
-URxvt*letterSpace:                              1
+URxvt*letterSpace:                               0.8
 
 !URxvt*font:                                     xft:ProFontWindows:hinting=true:pixelsize=16.2:antialias=true,xft:WenQuanYi Micro Hei Mono:regular:size=13.4:minspace=true:antialias=true
 !URxvt*boldFont:                                 xft:ProFontWindows:hinting=true:pixelsize=16.2:antialias=true

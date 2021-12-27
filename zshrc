@@ -86,7 +86,8 @@ export VIRGO_LIB_ROOT=$HOME/phab/virgo/build
 export DRACO_SRC_ROOT=$HOME/phab/draco
 export DRACO_LIB_ROOT=$HOME/phab/draco/build
 #export DRACO_KVSERVER="draco-dev:9000"
-export DRACO_METASERVER="metalb:9000"
+export DRACO_METASERVER="metaalpha:9000"
+export DRACO_KVSERVER="metaalpha:9000"
 export STRATRUN_WS=$HOME/stratrun
 #export BOOST_ROOT=$HOME/playground/boost_1_68_0
 

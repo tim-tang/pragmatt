@@ -46,26 +46,6 @@ function home() {
     info " ${1} VPN (via ppp1) not up yet" "✖"
 }
 
-function vultr() {
-    sudo ipsec auto --route vultr
-    sudo xl2tpd-control connect vultr
-    info "=>>> ${1} VPN connect " "✔"
-    for i in $(seq 12); do
-        if ifconfig -s | grep ^ppp2; then
-            sudo route del 1.0.0.1 ppp2
-            sudo route add -net 192.168.88.0/24 ppp2
-            sudo route add default gw 192.168.88.1
-            # sudo ip route replace default gw 192.168.88.1 dev ppp2
-            info "=>>> Vultr VPN (via ppp2) online  " "✔"
-            exit 0
-        else
-            sleep 1
-            echo -ne "$i.."
-        fi
-    done
-    info " ${1} VPN (via ppp2) not up yet" "✖"
-}
-
 function disconnect() {
     sudo xl2tpd-control disconnect $1
     info "=>>> VPN ${1} offline " "✔"
@@ -76,10 +56,6 @@ while :; do
     case $1 in
         home)
             home
-            break
-            ;;
-        vultr)
-            vultr
             break
             ;;
         flowam)

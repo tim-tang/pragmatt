@@ -116,9 +116,12 @@ echo "
 # ------------
 # Install Mutt
 # ------------"
-sudo yum install -y mutt
+sudo yum install -y mutt maildrop fetchmail
 ln -sf $PWD/muttrc $HOME/.muttrc
 ln -sf $PWD/mutt $HOME/.mutt
+ln -sf $PWD/mutt $HOME/.mutt
+cp $PWD/fetchmailrc $HOME/.fetchmailrc
+cp $PWD/mailfilter $HOME/.mailfilter
 
 echo "
 # -------------

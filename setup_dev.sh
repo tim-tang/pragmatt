@@ -22,7 +22,7 @@ echo "
 # -------------
 # Install Utils
 # -------------"
-sudo yum install -y curl doxygen graphviz htop mercurial psmisc screen s3cmd gdb ntp axel tigervnc freedesktop, ansible
+sudo yum install -y curl doxygen graphviz htop mercurial psmisc screen s3cmd gdb ntp axel tigervnc freedesktop ansible
 
 echo "
 # ----------------
@@ -30,13 +30,13 @@ echo "
 # ----------------
 "
 sudo yum install -y php-cli
-pushd $PWD
-cd /opt
-sudo git clone https://github.com/phacility/arcanist.git
-sudo git clone https://github.com/phacility/libphutil.git
-sudo ln -s /opt/arcanist/bin/arc /usr/bin/arc
-arc set-config editor "/usr/bin/vim"
-popd
+#pushd $PWD
+#cd /opt
+#sudo git clone https://github.com/phacility/arcanist.git
+#sudo git clone https://github.com/phacility/libphutil.git
+#sudo ln -s /opt/arcanist/bin/arc /usr/bin/arc
+#arc set-config editor "/usr/bin/vim"
+#popd
 
 echo "
 # --------------

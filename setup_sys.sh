@@ -16,8 +16,17 @@ echo "
 #     update_cmd=security and apply_updates=yes.
 # Use http://mirrors.aliyun.com for base, updates, and epel repos.
 # -------------------"
-sudo yum install -y wget
-sudo wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+# sudo yum install -y wget
+# sudo wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+sudo yum install -y epel-release network-scripts net-tools
+sed -e 's|^metalink=|#metalink=|g' \
+    -e 's|^#baseurl=https://download.example/pub|baseurl=https://mirrors.aliyun.com|g' \
+    -i.bak \
+    /etc/yum.repos.d/epel*.repo
+sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+    -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=http://mirrors.aliyun.com/rockylinux|g' \
+    -i.bak \
+    /etc/yum.repos.d/Rocky-*.repo
 sudo yum clean all
 sudo yum makecache
 sudo yum update -y
@@ -26,7 +35,7 @@ echo "
 # ------------
 # Install Deps
 # ------------"
-sudo yum install -y epel-release deltarpm yum-cron openssl-devel
+#sudo yum install -y epel-release deltarpm yum-cron openssl-devel
 sudo yum install -y ghc libXpm-devel.x86_64  haskell-platform gnutls-devel libgsasl-devel libxml2-devel zlib-devel ghc-zlib-devel libidn-devel
 sudo yum install -y cabal-install ghc-X11 ghc-X11-devel ghc-X11-xft ghc-X11-xft-devel
 sudo yum install -y dmenu xclip
@@ -35,11 +44,13 @@ echo "
 # -----------
 # Install X11
 # -----------"
-sudo yum groupinstall -y "GNOME Desktop"
+#sudo yum groupinstall -y "GNOME Desktop"
 #sudo yum groupinstall -y base core dail-up fonts directory-client input-methods internet-browser java-platform guest-agents guest-desktop-agents multimedia network-file-system-client networkmanager-submodules
-sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
-sudo systemctl set-default graphical.target
-sudo systemctl disable gdm
+#sudo yum install -y xorg-x11-server-Xorg xorg-x11-utils xorg-x11-xauth xorg-x11-xinit
+#sudo systemctl set-default graphical.target
+#sudo systemctl disable gdm
+#dnf install -y xfdesktop xfce4-{session,settings,terminal}
+
 
 echo "
 # -----------

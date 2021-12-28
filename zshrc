@@ -77,7 +77,7 @@ source $ZSH/oh-my-zsh.sh
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/phab/virgo/build/lib:$HOME/phab/apus/build/lib:$HOME/phab/pumpman/build/lib
 export LD_LIBRARY_PATH=$HOME/phab/apus/build/lib:$HOME/phab/virgo/build/lib:$HOME/phab/virgo/build/lib/python:$HOME/phab/pumpman/build/lib
 
-export PYTHONPATH=$HOME/phab/virgo/build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/apus/build/lib/python:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/gemini/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python:$HOME/phab/pisces/flowrun/src/python:$HOME/phab/pisces/stratrun/src/python:$HOME/phab/cetus/src/python:$HOME/phab/crux:$HOME/phab/libra/src/python:$HOME/phab/taurus/src/python:$HOME/phab/grus/src/python
+export PYTHONPATH=$HOME/phab/virgo/build/lib/python:$HOME/phab/virgo/tools:$HOME/phab/apus/build/lib/python:$HOME/phab/aries/src/python:$HOME/phab/apus/build/lib/python:$HOME/phab/gemini/src/python:$HOME/phab/aquarius/aqua-facility/src/python:$HOME/phab/draco/build/lib/python:$HOME/phab/pisces/flowrun:$HOME/phab/pisces/stratrun/src/python:$HOME/phab/cetus/src/python:$HOME/phab/crux:$HOME/phab/libra/src/python:$HOME/phab/taurus/src/python:$HOME/phab/grus/src/python
 
 
 export VIRGO_SRC_ROOT=$HOME/phab/virgo
